@@ -1,46 +1,29 @@
 import './App.css';
 
-import {
-	AppstoreOutlined,
-	BarChartOutlined,
-	CloudOutlined,
-	ShopOutlined,
-	TeamOutlined,
-	UploadOutlined,
-	UserOutlined,
-	VideoCameraOutlined,
-} from '@ant-design/icons';
-import { Layout, Menu } from 'antd';
+import { Breadcrumb, Layout } from 'antd';
 
-import NavBar from './components/NavBar';
+import Header from './components/Header/Header';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import NavBar from './components/NavBar/NavBar';
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Content, Footer } = Layout;
 
 function App() {
 	return (
-		<Layout>
-			<Sider>
+		<Layout style={{ height: '100%' }}>
+			<Header />
+			<Layout>
 				<NavBar />
-			</Sider>
-
-			<Layout className="site-layout" style={{ marginLeft: 200 }}>
-				<Header className="site-layout-background" style={{ padding: 0 }} />
-				<Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
-					<div className="site-layout-background" style={{ padding: 24, textAlign: 'center' }}>
-						<br />
-						Chairs
-						<br />
-						Desk chairs
-						<br />
-						Mattresses
-						<br />
-						Headboards
-						<br />
-						Dinning tables
-						<br />
+				<Content className="site-layout" style={{ padding: '0 50px', marginTop: 70 }}>
+					<Breadcrumb style={{ margin: '16px 0' }}>
+						<Breadcrumb.Item>Home</Breadcrumb.Item>
+						<Breadcrumb.Item>Sofa & Couches</Breadcrumb.Item>
+					</Breadcrumb>
+					<div className="site-layout-background" style={{ padding: 24, minHeight: 380 }}>
+						<ItemListContainer />
 					</div>
+					<Footer style={{ textAlign: 'center' }}>AV Furniture ©2021</Footer>
 				</Content>
-				<Footer style={{ textAlign: 'center' }}>AV - Furniture</Footer>
 			</Layout>
 		</Layout>
 	);
