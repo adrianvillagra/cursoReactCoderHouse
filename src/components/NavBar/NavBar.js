@@ -1,8 +1,6 @@
 import { AppstoreOutlined, NotificationOutlined, WhatsAppOutlined } from '@ant-design/icons';
-import { Button, Layout, Menu } from 'antd';
+import { Layout, Menu } from 'antd';
 import React, { useState } from 'react';
-
-import { NavLink } from 'react-router-dom';
 
 const { Sider } = Layout;
 const { SubMenu } = Menu;
