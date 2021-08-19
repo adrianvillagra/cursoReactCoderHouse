@@ -3,6 +3,7 @@ import './App.css';
 import { Breadcrumb, Layout } from 'antd';
 
 import Header from './components/Header/Header';
+import ItemList from './components/ItemList/ItemList';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import NavBar from './components/NavBar/NavBar';
 
@@ -20,7 +21,7 @@ function App() {
 						<Breadcrumb.Item>Sofa & Couches</Breadcrumb.Item>
 					</Breadcrumb>
 					<div className="site-layout-background" style={{ padding: 24, minHeight: 380 }}>
-						<ItemListContainer />
+						<ItemList />
 					</div>
 					<Footer style={{ textAlign: 'center' }}>AV Furniture ©2021</Footer>
 				</Content>
