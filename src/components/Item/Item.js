@@ -7,6 +7,7 @@ import {
 	StarOutlined,
 } from '@ant-design/icons';
 
+import CustomBreadcrum from '../Breadcum/CustomBreadcrum';
 import React from 'react';
 import Sofa from '../../assets/images/sofa.png';
 
