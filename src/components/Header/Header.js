@@ -18,7 +18,7 @@ const Header = () => {
 			<Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
 				<Menu.Item key="users">Users</Menu.Item>
 				<Menu.Item key="chart" icon={<ShoppingCartOutlined />}>
-					Chart
+					Cart
 				</Menu.Item>
 			</Menu>
 		</Header>

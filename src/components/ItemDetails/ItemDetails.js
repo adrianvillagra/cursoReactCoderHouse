@@ -15,25 +15,17 @@ import React, { useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 
 import ItemService from '../../services/ItemService';
-import Sofa from '../../assets/images/sofa.png';
 
-const ItemDetails = ({ furniture }) => {
-	const [loading, setLoading] = React.useState(false);
+const ItemDetails = () => {
+	const [loading, setLoading] = useState(false);
 	const [selected, setSelected] = useState(null);
 	const [showModal, setShowModal] = useState(false);
-	const [typeOptions, setTypeOptions] = useState([]);
-	const { id, itemId } = useParams();
+	const [furniture, setFurniture] = useState([]);
+	const { id, furnitureId } = useParams();
 	const history = useHistory();
 	const { Content } = Layout;
 	const { Text } = Typography;
 	const service = new ItemService();
-
-	const addField = () => {
-		const tempInfo = typeOptions;
-
-		tempInfo.push('');
-		setTypeOptions([...tempInfo]);
-	};
 
 	const backToSofaAndCouches = () => history.replace(`/furniture/sofa-couches`);
 
@@ -49,7 +41,22 @@ const ItemDetails = ({ furniture }) => {
 		}
 	};
 
-	useEffect(() => {}, []);
+	const getFurniture = () => {
+		setLoading(true);
+		service
+			.get(id)
+			.then(data => {
+				console.log(data);
+				setFurniture(data);
+			})
+			.catch(err => console.log(err))
+			.finally(() => setLoading(false));
+	};
+
+	useEffect(() => {
+		getFurniture();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 
 	return (
 		<Layout style={{ height: 'auto' }}>
@@ -57,16 +64,17 @@ const ItemDetails = ({ furniture }) => {
 				<Row gutter={10}>
 					<Col span={24}>
 						<Image.PreviewGroup>
-							<Image width={500} src={Sofa} />
+							<Image width={'60%'} style={{ align: 'center' }} src={furniture.pictureUrl} />
 						</Image.PreviewGroup>
 					</Col>
 				</Row>
 				<br />
-				<Descriptions title="Descriptions" bordered>
+				{loading && <Spin style={{ display: 'flex', justifyContent: 'center' }} />}
+				<Descriptions title="Descriptions" bordered style={{ width: 'auto' }}>
 					<Descriptions.Item label="Product">{furniture.title}</Descriptions.Item>
 					<Descriptions.Item label="Content">{furniture.content}</Descriptions.Item>
 					<Descriptions.Item label="Description">{furniture.description}</Descriptions.Item>
-					<Descriptions.Item label="Amount">{furniture.price}</Descriptions.Item>
+					<Descriptions.Item label="Amount">${furniture.price}</Descriptions.Item>
 				</Descriptions>
 			</Content>
 		</Layout>

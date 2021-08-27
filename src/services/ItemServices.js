@@ -1,6 +1,7 @@
 import { Furniture } from '../interfaces/Furniture';
+
 class ItemService {
-	setError: (value: string) => void;
+	imagePath = '../assets/images/sofa.png';
 
 	furniture = [
 		{
@@ -10,7 +11,7 @@ class ItemService {
 			description: 'Excellent bone white sofa',
 			content: 'Sofa designed with the highest standards in the market, with an elegant finish.',
 			price: 1000,
-			pictureUrl: 'assets/images/furniture/sofa_couches/sofa_couches1.png',
+			pictureUrl: this.imagePath,
 		},
 		{
 			id: 2,
@@ -19,7 +20,7 @@ class ItemService {
 			description: 'Excellent bone white sofa',
 			content: 'Sofa designed with the highest standards in the market, with an elegant finish.',
 			price: 2000,
-			pictureUrl: 'assets/images/furniture/sofa_couches/sofa_couches2.png',
+			pictureUrl: this.imagePath,
 		},
 		{
 			id: 3,
@@ -28,7 +29,7 @@ class ItemService {
 			description: 'Excellent bone white sofa',
 			content: 'Sofa designed with the highest standards in the market, with an elegant finish.',
 			price: 3000,
-			pictureUrl: 'assets/images/furniture/sofa_couches/sofa_couches3.png',
+			pictureUrl: this.imagePath,
 		},
 		{
 			id: 4,
@@ -37,7 +38,7 @@ class ItemService {
 			description: 'Excellent bone white sofa',
 			content: 'Sofa designed with the highest standards in the market, with an elegant finish.',
 			price: 4000,
-			pictureUrl: 'assets/images/furniture/sofa_couches/sofa_couches4.png',
+			pictureUrl: this.imagePath,
 		},
 		{
 			id: 5,
@@ -46,7 +47,7 @@ class ItemService {
 			description: 'Excellent bone white sofa',
 			content: 'Sofa designed with the highest standards in the market, with an elegant finish.',
 			price: 1000,
-			pictureUrl: 'assets/images/furniture/sofa_couches/sofa_couches5.png',
+			pictureUrl: this.imagePath,
 		},
 		{
 			id: 6,
@@ -55,7 +56,7 @@ class ItemService {
 			description: 'Excellent dresser',
 			content: 'Dresser designed with the highest standards in the market, with an elegant finish.',
 			price: 2000,
-			pictureUrl: 'assets/images/furniture/dressers/dressers1.png',
+			pictureUrl: this.imagePath,
 		},
 		{
 			id: 7,
@@ -64,7 +65,7 @@ class ItemService {
 			description: 'Excellent bone white sofa',
 			content: 'Dresser designed with the highest standards in the market, with an elegant finish.',
 			price: 2000,
-			pictureUrl: 'assets/images/furniture/dressers/dressers2.png',
+			pictureUrl: this.imagePath,
 		},
 		{
 			id: 8,
@@ -73,7 +74,7 @@ class ItemService {
 			description: 'Excellent dresser',
 			content: 'Dresser designed with the highest standards in the market, with an elegant finish.',
 			price: 3000,
-			pictureUrl: 'assets/images/furniture/dressers/dressers3.png',
+			pictureUrl: this.imagePath,
 		},
 		{
 			id: 9,
@@ -82,7 +83,7 @@ class ItemService {
 			description: 'Excellent dresser',
 			content: 'Dresser designed with the highest standards in the market, with an elegant finish.',
 			price: 4000,
-			pictureUrl: 'assets/images/furniture/dressers/dressers4.png',
+			pictureUrl: this.imagePath,
 		},
 		{
 			id: 10,
@@ -91,7 +92,7 @@ class ItemService {
 			description: 'Excellent dresser',
 			content: 'Dresser designed with the highest standards in the market, with an elegant finish.',
 			price: 5000,
-			pictureUrl: 'assets/images/furniture/dressers/dressers5.png',
+			pictureUrl: this.imagePath,
 		},
 		{
 			id: 11,
@@ -100,7 +101,7 @@ class ItemService {
 			description: 'Excellent accent chair',
 			content: 'Chair designed with the highest standards in the market, with an elegant finish.',
 			price: 1000,
-			pictureUrl: 'assets/images/furniture/accent_chairs/accent_chairs1.png',
+			pictureUrl: this.imagePath,
 		},
 		{
 			id: 12,
@@ -109,7 +110,7 @@ class ItemService {
 			description: 'Excellent accent chair',
 			content: 'Chair designed with the highest standards in the market, with an elegant finish.',
 			price: 2000,
-			pictureUrl: 'assets/images/furniture/accent_chairs/accent_chairs2.png',
+			pictureUrl: this.imagePath,
 		},
 		{
 			id: 13,
@@ -118,7 +119,7 @@ class ItemService {
 			description: 'Excellent accent chair',
 			content: 'Chair designed with the highest standards in the market, with an elegant finish.',
 			price: 3000,
-			pictureUrl: 'assets/images/furniture/accent_chairs/accent_chairs3.png',
+			pictureUrl: this.imagePath,
 		},
 		{
 			id: 14,
@@ -127,7 +128,7 @@ class ItemService {
 			description: 'Excellent accent chair',
 			content: 'Chair designed with the highest standards in the market, with an elegant finish.',
 			price: 4000,
-			pictureUrl: 'assets/images/furniture/accent_chairs/accent_chairs4.png',
+			pictureUrl: this.imagePath,
 		},
 		{
 			id: 15,
@@ -136,7 +137,7 @@ class ItemService {
 			description: 'Excellent accent chair',
 			content: 'Chair designed with the highest standards in the market, with an elegant finish.',
 			price: 5000,
-			pictureUrl: 'assets/images/furniture/accent_chairs/accent_chairs5.png',
+			pictureUrl: this.imagePath,
 		},
 		{
 			id: 16,
@@ -145,7 +146,7 @@ class ItemService {
 			description: 'Excellent desk',
 			content: 'Desk designed with the highest standards in the market, with an elegant finish.',
 			price: 1000,
-			pictureUrl: 'assets/images/furniture/desk/desk1.png',
+			pictureUrl: this.imagePath,
 		},
 		{
 			id: 17,
@@ -154,7 +155,7 @@ class ItemService {
 			description: 'Excellent desk',
 			content: 'Desk designed with the highest standards in the market, with an elegant finish.',
 			price: 2000,
-			pictureUrl: 'assets/images/furniture/desk/desk2.png',
+			pictureUrl: this.imagePath,
 		},
 		{
 			id: 18,
@@ -163,7 +164,7 @@ class ItemService {
 			description: 'Excellent desk',
 			content: 'Desk designed with the highest standards in the market, with an elegant finish.',
 			price: 3000,
-			pictureUrl: 'assets/images/furniture/desk/desk3.png',
+			pictureUrl: this.imagePath,
 		},
 		{
 			id: 19,
@@ -172,7 +173,7 @@ class ItemService {
 			description: 'Excellent desk',
 			content: 'Desk designed with the highest standards in the market, with an elegant finish.',
 			price: 4000,
-			pictureUrl: 'assets/images/furniture/desk/desk4.png',
+			pictureUrl: this.imagePath,
 		},
 		{
 			id: 20,
@@ -181,7 +182,7 @@ class ItemService {
 			description: 'Excellent desk',
 			content: 'Desk designed with the highest standards in the market, with an elegant finish.',
 			price: 5000,
-			pictureUrl: 'assets/images/furniture/desk/desk5.png',
+			pictureUrl: this.imagePath,
 		},
 		{
 			id: 21,
@@ -190,7 +191,7 @@ class ItemService {
 			description: 'Living Room',
 			content: 'Designed with the highest standards in the market, with an elegant finish.',
 			price: 5000,
-			pictureUrl: 'assets/images/furniture/living_room/living_room1.png',
+			pictureUrl: this.imagePath,
 		},
 		{
 			id: 22,
@@ -199,7 +200,7 @@ class ItemService {
 			description: 'Living Room',
 			content: 'Designed with the highest standards in the market, with an elegant finish.',
 			price: 6000,
-			pictureUrl: 'assets/images/furniture/living_room/living_room2.png',
+			pictureUrl: this.imagePath,
 		},
 		{
 			id: 23,
@@ -208,7 +209,7 @@ class ItemService {
 			description: 'Living Room',
 			content: 'Designed with the highest standards in the market, with an elegant finish.',
 			price: 5000,
-			pictureUrl: 'assets/images/furniture/living_room/living_room3.png',
+			pictureUrl: this.imagePath,
 		},
 		{
 			id: 24,
@@ -217,7 +218,7 @@ class ItemService {
 			description: 'Living Room',
 			content: 'Designed with the highest standards in the market, with an elegant finish.',
 			price: 7000,
-			pictureUrl: 'assets/images/furniture/living_room/living_room4.png',
+			pictureUrl: this.imagePath,
 		},
 		{
 			id: 25,
@@ -226,7 +227,7 @@ class ItemService {
 			description: 'Living Room',
 			content: 'Designed with the highest standards in the market, with an elegant finish.',
 			price: 8000,
-			pictureUrl: 'assets/images/furniture/living_room/living_room5.png',
+			pictureUrl: this.imagePath,
 		},
 		{
 			id: 26,
@@ -235,7 +236,7 @@ class ItemService {
 			description: 'Table & Chairs',
 			content: 'Designed with the highest standards in the market, with an elegant finish.',
 			price: 5000,
-			pictureUrl: 'assets/images/furniture/table_chair/table_chair1.png',
+			pictureUrl: this.imagePath,
 		},
 		{
 			id: 27,
@@ -244,7 +245,7 @@ class ItemService {
 			description: 'Table & Chairs',
 			content: 'Designed with the highest standards in the market, with an elegant finish.',
 			price: 8000,
-			pictureUrl: 'assets/images/furniture/table_chair/table_chair2.png',
+			pictureUrl: this.imagePath,
 		},
 		{
 			id: 28,
@@ -253,7 +254,7 @@ class ItemService {
 			description: 'Table & Chairs',
 			content: 'Designed with the highest standards in the market, with an elegant finish.',
 			price: 5000,
-			pictureUrl: 'assets/images/furniture/table_chair/table_chair3.png',
+			pictureUrl: this.imagePath,
 		},
 		{
 			id: 29,
@@ -262,7 +263,7 @@ class ItemService {
 			description: 'Table & Chairs',
 			content: 'Designed with the highest standards in the market, with an elegant finish.',
 			price: 5000,
-			pictureUrl: 'assets/images/furniture/table_chair/table_chair4.png',
+			pictureUrl: this.imagePath,
 		},
 		{
 			id: 30,
@@ -271,7 +272,7 @@ class ItemService {
 			description: 'Table & Chairs',
 			content: 'Designed with the highest standards in the market, with an elegant finish.',
 			price: 9000,
-			pictureUrl: 'assets/images/furniture/table_chair/table_chair5.png',
+			pictureUrl: this.imagePath,
 		},
 		{
 			id: 31,
@@ -280,7 +281,7 @@ class ItemService {
 			description: 'Beds',
 			content: 'Designed with the highest standards in the market, with an elegant finish.',
 			price: 8000,
-			pictureUrl: 'assets/images/furniture/beds/beds1.png',
+			pictureUrl: this.imagePath,
 		},
 		{
 			id: 32,
@@ -289,7 +290,7 @@ class ItemService {
 			description: 'Beds',
 			content: 'Designed with the highest standards in the market, with an elegant finish.',
 			price: 5000,
-			pictureUrl: 'assets/images/furniture/beds/beds2.png',
+			pictureUrl: this.imagePath,
 		},
 		{
 			id: 33,
@@ -298,7 +299,7 @@ class ItemService {
 			description: 'Beds',
 			content: 'Designed with the highest standards in the market, with an elegant finish.',
 			price: 9000,
-			pictureUrl: 'assets/images/furniture/beds/beds3.png',
+			pictureUrl: this.imagePath,
 		},
 		{
 			id: 34,
@@ -307,7 +308,7 @@ class ItemService {
 			description: 'Beds',
 			content: 'Designed with the highest standards in the market, with an elegant finish.',
 			price: 4000,
-			pictureUrl: 'assets/images/furniture/beds/beds4.png',
+			pictureUrl: this.imagePath,
 		},
 		{
 			id: 35,
@@ -316,7 +317,7 @@ class ItemService {
 			description: 'Beds',
 			content: 'Designed with the highest standards in the market, with an elegant finish.',
 			price: 7000,
-			pictureUrl: 'assets/images/furniture/beds/beds5.png',
+			pictureUrl: this.imagePath,
 		},
 		{
 			id: 36,
@@ -325,7 +326,7 @@ class ItemService {
 			description: 'Rugs',
 			content: 'Designed with the highest standards in the market, with an elegant finish.',
 			price: 7000,
-			pictureUrl: 'assets/images/furniture/rugs/rug1.png',
+			pictureUrl: this.imagePath,
 		},
 		{
 			id: 37,
@@ -334,7 +335,7 @@ class ItemService {
 			description: 'Rugs',
 			content: 'Designed with the highest standards in the market, with an elegant finish.',
 			price: 4000,
-			pictureUrl: 'assets/images/furniture/rugs/rug2.png',
+			pictureUrl: this.imagePath,
 		},
 		{
 			id: 38,
@@ -343,7 +344,7 @@ class ItemService {
 			description: 'Rugs',
 			content: 'Designed with the highest standards in the market, with an elegant finish.',
 			price: 8000,
-			pictureUrl: 'assets/images/furniture/rugs/rug3.png',
+			pictureUrl: this.imagePath,
 		},
 		{
 			id: 39,
@@ -352,7 +353,7 @@ class ItemService {
 			description: 'Dining Chairs',
 			content: 'Designed with the highest standards in the market, with an elegant finish.',
 			price: 10000,
-			pictureUrl: 'assets/images/furniture/dining_chairs/dining_chairs1.png',
+			pictureUrl: this.imagePath,
 		},
 		{
 			id: 40,
@@ -361,7 +362,7 @@ class ItemService {
 			description: 'Dining Chairs',
 			content: 'Designed with the highest standards in the market, with an elegant finish.',
 			price: 15000,
-			pictureUrl: 'assets/images/furniture/dining_chairs/dining_chairs2.png',
+			pictureUrl: this.imagePath,
 		},
 		{
 			id: 41,
@@ -370,7 +371,7 @@ class ItemService {
 			description: 'Dining Chairs',
 			content: 'Designed with the highest standards in the market, with an elegant finish.',
 			price: 11000,
-			pictureUrl: 'assets/images/furniture/dining_chairs/dining_chairs3.png',
+			pictureUrl: this.imagePath,
 		},
 		{
 			id: 42,
@@ -379,7 +380,7 @@ class ItemService {
 			description: 'TV & Media',
 			content: 'Designed with the highest standards in the market, with an elegant finish.',
 			price: 11000,
-			pictureUrl: 'assets/images/furniture/tv_media/tv_media1.png',
+			pictureUrl: this.imagePath,
 		},
 		{
 			id: 43,
@@ -388,7 +389,7 @@ class ItemService {
 			description: 'TV & Media',
 			content: 'Designed with the highest standards in the market, with an elegant finish.',
 			price: 16000,
-			pictureUrl: 'assets/images/furniture/tv_media/tv_media2.png',
+			pictureUrl: this.imagePath,
 		},
 		{
 			id: 44,
@@ -397,33 +398,40 @@ class ItemService {
 			description: 'TV & Media',
 			content: 'Designed with the highest standards in the market, with an elegant finish.',
 			price: 18000,
-			pictureUrl: 'assets/images/furniture/tv_media/tv_media3.png',
+			pictureUrl: this.imagePath,
 		},
 	];
-
-	constructor(setError: (value: string) => void) {
-		//this.path = `/'}`;
-		this.setError = setError;
-	}
 
 	async getAll() {
 		return this.furniture;
 	}
 
-	async get(furnitureId: number) {
+	async get(furnitureId) {
 		return this.furniture[furnitureId - 1];
 	}
 
-	async getElementByCategoryId(id: number) {
-		return this.furniture.filter(element => element.category === id);
-	}
+	async getElementByCategoryId(id) {
+		console.log('id:', id);
+		let result: {
+			id: number,
+			category: number,
+			title: string,
+			description: string,
+			content: string,
+			price: number,
+			pictureUrl: string,
+		}[] = [];
+		// this.furniture.forEach(element => {
+		// 	if (element.category === id) {
+		// 		result.push(element);
+		// 	}
+		// });
+		// console.log('return:', result);
 
-	handleResponseError(response: { status: string }): void {
-		this.setError(response.status);
-	}
+		// result = this.furniture.filter(element => element.category === id);
+		// console.log('return:', result);
 
-	handleError(error: { message: string }): void {
-		this.setError(error.message);
+		return this.furniture.filter(element => element.category === parseInt(id));
 	}
 }
 

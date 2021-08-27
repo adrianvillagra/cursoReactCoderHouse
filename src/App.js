@@ -22,54 +22,59 @@ function App() {
 						<ItemList />
 					</MainLayout>
 				</Route>
+				<Route exact path="/furniture/uid=:id">
+					<MainLayout>
+						<ItemDetails />
+					</MainLayout>
+				</Route>
 				<Route exact path="/furniture/sofa-couches">
 					<MainLayout>
-						<ItemDetailsContainer />
+						<ItemList categoryId={1} />
 					</MainLayout>
 				</Route>
 				<Route exact path="/furniture/dressers">
 					<MainLayout>
-						<ItemList />
+						<ItemList categoryId={2} />
 					</MainLayout>
 				</Route>
 				<Route exact path="/furniture/accent-chairs">
 					<MainLayout>
-						<ItemList />
+						<ItemList categoryId={3} />
 					</MainLayout>
 				</Route>
 				<Route exact path="/furniture/desk">
 					<MainLayout>
-						<ItemList />
+						<ItemList categoryId={4} />
 					</MainLayout>
 				</Route>
 				<Route exact path="/furniture/living-room">
 					<MainLayout>
-						<ItemList />
+						<ItemList categoryId={5} />
 					</MainLayout>
 				</Route>
 				<Route exact path="/furniture/table-chair-sets">
 					<MainLayout>
-						<ItemList />
+						<ItemList categoryId={6} />
 					</MainLayout>
 				</Route>
 				<Route exact path="/furniture/beds">
 					<MainLayout>
-						<ItemList />
+						<ItemList categoryId={7} />
 					</MainLayout>
 				</Route>
 				<Route exact path="/furniture/rugs">
 					<MainLayout>
-						<ItemList />
+						<ItemList categoryId={8} />
 					</MainLayout>
 				</Route>
 				<Route exact path="/furniture/dining-chairs">
 					<MainLayout>
-						<ItemList />
+						<ItemList categoryId={9} />
 					</MainLayout>
 				</Route>
 				<Route exact path="/furniture/tv-media">
 					<MainLayout>
-						<ItemList />
+						<ItemList categoryId={10} />
 					</MainLayout>
 				</Route>
 				<Route exact path="/contact">

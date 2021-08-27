@@ -4,20 +4,28 @@ import {
 	LikeOutlined,
 	MessageOutlined,
 	PlusCircleOutlined,
+	ShopOutlined,
 	StarOutlined,
 } from '@ant-design/icons';
 
 import CustomBreadcrum from '../Breadcum/CustomBreadcrum';
 import React from 'react';
-import Sofa from '../../assets/images/sofa.png';
+import Sofa from '../../assets/images/furniture/sofa_couches/sofa_couches1.png';
+import { useHistory } from 'react-router-dom';
 
 const Item = ({ furniture, onClickAddItem }) => {
+	const history = useHistory();
+
 	const IconText = ({ icon, text }) => (
 		<Space>
 			{React.createElement(icon)}
 			{text}
 		</Space>
 	);
+
+	const onGoItemDetail = item => history.push(`./uid=${furniture.id}`);
+
+	console.log('url:', `'../../${furniture.pictureUrl}'`);
 	return (
 		<List.Item
 			key={furniture.id}
@@ -33,8 +41,15 @@ const Item = ({ furniture, onClickAddItem }) => {
 					size={'small'}
 					onClick={onClickAddItem}
 				/>,
+				<Button
+					type="primary"
+					shape="circle"
+					icon={<ShopOutlined />}
+					size={'small'}
+					onClick={onGoItemDetail}
+				/>,
 			]}
-			extra={<img width={272} alt="logo" src={Sofa} />}
+			extra={<img width={272} alt="img" src={`'../../${furniture.pictureUrl}'`} />}
 		>
 			<List.Item.Meta
 				avatar={

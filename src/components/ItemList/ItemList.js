@@ -5,17 +5,17 @@ import FurnitureService from '../../services/ItemService';
 import Item from '../Item/Item';
 import ItemCount from '../ItemCount/ItemCount';
 
-const ItemList = () => {
+const ItemList = categoryId => {
 	const [furniture, setFurniture] = useState([]);
 	const [isVisible, setIsVisible] = useState(false);
 	const [loading, setLoading] = useState(false);
 	const service = new FurnitureService();
 
-	const getFurniture = () => {
+	const getFurniture = id => {
 		setLoading(true);
 		setTimeout(2000);
 		service
-			.getAll()
+			.getElementByCategoryId(id)
 			.then(result => {
 				if (typeof result != 'undefined') {
 					setFurniture(result);
@@ -30,7 +30,12 @@ const ItemList = () => {
 	};
 
 	useEffect(() => {
-		getFurniture();
+		getFurniture(categoryId.categoryId);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [categoryId]);
+
+	useEffect(() => {
+		getFurniture(categoryId.categoryId);
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
