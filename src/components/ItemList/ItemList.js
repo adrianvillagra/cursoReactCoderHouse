@@ -3,11 +3,9 @@ import React, { useEffect, useState } from 'react';
 
 import FurnitureService from '../../services/ItemService';
 import Item from '../Item/Item';
-import ItemCount from '../ItemCount/ItemCount';
 
 const ItemList = categoryId => {
 	const [furniture, setFurniture] = useState([]);
-	const [isVisible, setIsVisible] = useState(false);
 	const [loading, setLoading] = useState(false);
 	const service = new FurnitureService();
 
@@ -56,9 +54,8 @@ const ItemList = categoryId => {
 						<b>AV - Furniture</b> New Collection
 					</div>
 				}
-				renderItem={item => <Item furniture={item} onClickAddItem={value => setIsVisible(value)} />}
+				renderItem={item => <Item furniture={item} />}
 			/>
-			<ItemCount onVisible={isVisible} stock="10" initial="1" />
 			{loading && <Spin style={{ display: 'flex', justifyContent: 'center' }} />}
 		</div>
 	);

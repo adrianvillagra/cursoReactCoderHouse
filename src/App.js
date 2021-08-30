@@ -2,10 +2,9 @@ import './App.css';
 
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 
+import Cart from './components/Cart/Cart';
 import ItemDetails from './components/ItemDetails/ItemDetails';
-import ItemDetailsContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import ItemList from './components/ItemList/ItemList';
-import { Layout } from 'antd';
 import MainLayout from './layout/MainLayout';
 
 function App() {
@@ -20,6 +19,11 @@ function App() {
 				<Route exact path="/new-sale">
 					<MainLayout>
 						<ItemList />
+					</MainLayout>
+				</Route>
+				<Route exact path="/cart">
+					<MainLayout>
+						<Cart />
 					</MainLayout>
 				</Route>
 				<Route exact path="/furniture/uid=:id">

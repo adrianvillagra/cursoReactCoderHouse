@@ -20,6 +20,7 @@ const ItemCount = props => {
 	const onClickOk = () => {
 		if (itemCount <= props.stock) {
 			successMessage();
+			props.quantitySelected(itemCount);
 			setVisible(false);
 		} else errorMessage();
 	};

@@ -3,7 +3,6 @@ import {
 	DollarCircleOutlined,
 	LikeOutlined,
 	MessageOutlined,
-	PlusCircleOutlined,
 	ShopOutlined,
 	StarOutlined,
 } from '@ant-design/icons';
@@ -13,7 +12,7 @@ import React from 'react';
 import Sofa from '../../assets/images/furniture/sofa_couches/sofa_couches1.png';
 import { useHistory } from 'react-router-dom';
 
-const Item = ({ furniture, onClickAddItem }) => {
+const Item = ({ furniture }) => {
 	const history = useHistory();
 
 	const IconText = ({ icon, text }) => (
@@ -34,13 +33,6 @@ const Item = ({ furniture, onClickAddItem }) => {
 				<IconText icon={LikeOutlined} text="156" key="list-vertical-like-o" />,
 				<IconText icon={MessageOutlined} text="2" key="list-vertical-message" />,
 				<IconText icon={DollarCircleOutlined} text={furniture.price} key="list-vertical-message" />,
-				<Button
-					type="primary"
-					shape="circle"
-					icon={<PlusCircleOutlined />}
-					size={'small'}
-					onClick={onClickAddItem}
-				/>,
 				<Button
 					type="primary"
 					shape="circle"
