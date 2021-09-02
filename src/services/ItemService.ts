@@ -10,7 +10,8 @@ class ItemService {
 			description: 'Excellent bone white sofa',
 			content: 'Sofa designed with the highest standards in the market, with an elegant finish.',
 			price: 1000,
-			pictureUrl: 'assets/images/furniture/sofa_couches/sofa_couches1.png',
+			stock: 20,
+			pictureUrl: 'public/images/furniture/sofa_couches/sofa_couches1.png',
 		},
 		{
 			id: 2,
@@ -19,7 +20,8 @@ class ItemService {
 			description: 'Excellent bone white sofa',
 			content: 'Sofa designed with the highest standards in the market, with an elegant finish.',
 			price: 2000,
-			pictureUrl: 'assets/images/furniture/sofa_couches/sofa_couches2.png',
+			stock: 20,
+			pictureUrl: 'public/images/furniture/sofa_couches/sofa_couches2.png',
 		},
 		{
 			id: 3,
@@ -28,7 +30,8 @@ class ItemService {
 			description: 'Excellent bone white sofa',
 			content: 'Sofa designed with the highest standards in the market, with an elegant finish.',
 			price: 3000,
-			pictureUrl: 'assets/images/furniture/sofa_couches/sofa_couches3.png',
+			stock: 20,
+			pictureUrl: 'public/images/furniture/sofa_couches/sofa_couches3.png',
 		},
 		{
 			id: 4,
@@ -37,7 +40,8 @@ class ItemService {
 			description: 'Excellent bone white sofa',
 			content: 'Sofa designed with the highest standards in the market, with an elegant finish.',
 			price: 4000,
-			pictureUrl: 'assets/images/furniture/sofa_couches/sofa_couches4.png',
+			stock: 20,
+			pictureUrl: 'public/images/furniture/sofa_couches/sofa_couches4.png',
 		},
 		{
 			id: 5,
@@ -46,7 +50,8 @@ class ItemService {
 			description: 'Excellent bone white sofa',
 			content: 'Sofa designed with the highest standards in the market, with an elegant finish.',
 			price: 1000,
-			pictureUrl: 'assets/images/furniture/sofa_couches/sofa_couches5.png',
+			stock: 20,
+			pictureUrl: 'public/images/furniture/sofa_couches/sofa_couches5.png',
 		},
 		{
 			id: 6,
@@ -55,7 +60,8 @@ class ItemService {
 			description: 'Excellent dresser',
 			content: 'Dresser designed with the highest standards in the market, with an elegant finish.',
 			price: 2000,
-			pictureUrl: 'assets/images/furniture/dressers/dressers1.png',
+			stock: 20,
+			pictureUrl: 'public/images/furniture/dressers/dressers1.png',
 		},
 		{
 			id: 7,
@@ -64,7 +70,8 @@ class ItemService {
 			description: 'Excellent bone white sofa',
 			content: 'Dresser designed with the highest standards in the market, with an elegant finish.',
 			price: 2000,
-			pictureUrl: 'assets/images/furniture/dressers/dressers2.png',
+			stock: 20,
+			pictureUrl: 'public/images/furniture/dressers/dressers2.png',
 		},
 		{
 			id: 8,
@@ -73,7 +80,8 @@ class ItemService {
 			description: 'Excellent dresser',
 			content: 'Dresser designed with the highest standards in the market, with an elegant finish.',
 			price: 3000,
-			pictureUrl: 'assets/images/furniture/dressers/dressers3.png',
+			stock: 20,
+			pictureUrl: 'public/images/furniture/dressers/dressers3.png',
 		},
 		{
 			id: 9,
@@ -82,7 +90,8 @@ class ItemService {
 			description: 'Excellent dresser',
 			content: 'Dresser designed with the highest standards in the market, with an elegant finish.',
 			price: 4000,
-			pictureUrl: 'assets/images/furniture/dressers/dressers4.png',
+			stock: 20,
+			pictureUrl: 'public/images/furniture/dressers/dressers4.png',
 		},
 		{
 			id: 10,
@@ -91,7 +100,8 @@ class ItemService {
 			description: 'Excellent dresser',
 			content: 'Dresser designed with the highest standards in the market, with an elegant finish.',
 			price: 5000,
-			pictureUrl: 'assets/images/furniture/dressers/dressers5.png',
+			stock: 20,
+			pictureUrl: 'public/images/furniture/dressers/dressers5.png',
 		},
 		{
 			id: 11,
@@ -100,7 +110,8 @@ class ItemService {
 			description: 'Excellent accent chair',
 			content: 'Chair designed with the highest standards in the market, with an elegant finish.',
 			price: 1000,
-			pictureUrl: 'assets/images/furniture/accent_chairs/accent_chairs1.png',
+			stock: 20,
+			pictureUrl: 'public/images/furniture/accent_chairs/accent_chairs1.png',
 		},
 		{
 			id: 12,
@@ -109,7 +120,8 @@ class ItemService {
 			description: 'Excellent accent chair',
 			content: 'Chair designed with the highest standards in the market, with an elegant finish.',
 			price: 2000,
-			pictureUrl: 'assets/images/furniture/accent_chairs/accent_chairs2.png',
+			stock: 20,
+			pictureUrl: 'public/images/furniture/accent_chairs/accent_chairs2.png',
 		},
 		{
 			id: 13,
@@ -118,7 +130,8 @@ class ItemService {
 			description: 'Excellent accent chair',
 			content: 'Chair designed with the highest standards in the market, with an elegant finish.',
 			price: 3000,
-			pictureUrl: 'assets/images/furniture/accent_chairs/accent_chairs3.png',
+			stock: 20,
+			pictureUrl: 'public/images/furniture/accent_chairs/accent_chairs3.png',
 		},
 		{
 			id: 14,
@@ -127,7 +140,8 @@ class ItemService {
 			description: 'Excellent accent chair',
 			content: 'Chair designed with the highest standards in the market, with an elegant finish.',
 			price: 4000,
-			pictureUrl: 'assets/images/furniture/accent_chairs/accent_chairs4.png',
+			stock: 20,
+			pictureUrl: 'public/images/furniture/accent_chairs/accent_chairs4.png',
 		},
 		{
 			id: 15,
@@ -136,7 +150,8 @@ class ItemService {
 			description: 'Excellent accent chair',
 			content: 'Chair designed with the highest standards in the market, with an elegant finish.',
 			price: 5000,
-			pictureUrl: 'assets/images/furniture/accent_chairs/accent_chairs5.png',
+			stock: 20,
+			pictureUrl: 'public/images/furniture/accent_chairs/accent_chairs5.png',
 		},
 		{
 			id: 16,
@@ -145,7 +160,8 @@ class ItemService {
 			description: 'Excellent desk',
 			content: 'Desk designed with the highest standards in the market, with an elegant finish.',
 			price: 1000,
-			pictureUrl: 'assets/images/furniture/desk/desk1.png',
+			stock: 20,
+			pictureUrl: 'public/images/furniture/desk/desk1.png',
 		},
 		{
 			id: 17,
@@ -154,7 +170,8 @@ class ItemService {
 			description: 'Excellent desk',
 			content: 'Desk designed with the highest standards in the market, with an elegant finish.',
 			price: 2000,
-			pictureUrl: 'assets/images/furniture/desk/desk2.png',
+			stock: 20,
+			pictureUrl: 'public/images/furniture/desk/desk2.png',
 		},
 		{
 			id: 18,
@@ -163,7 +180,8 @@ class ItemService {
 			description: 'Excellent desk',
 			content: 'Desk designed with the highest standards in the market, with an elegant finish.',
 			price: 3000,
-			pictureUrl: 'assets/images/furniture/desk/desk3.png',
+			stock: 20,
+			pictureUrl: 'public/images/furniture/desk/desk3.png',
 		},
 		{
 			id: 19,
@@ -172,7 +190,8 @@ class ItemService {
 			description: 'Excellent desk',
 			content: 'Desk designed with the highest standards in the market, with an elegant finish.',
 			price: 4000,
-			pictureUrl: 'assets/images/furniture/desk/desk4.png',
+			stock: 20,
+			pictureUrl: 'public/images/furniture/desk/desk4.png',
 		},
 		{
 			id: 20,
@@ -181,7 +200,8 @@ class ItemService {
 			description: 'Excellent desk',
 			content: 'Desk designed with the highest standards in the market, with an elegant finish.',
 			price: 5000,
-			pictureUrl: 'assets/images/furniture/desk/desk5.png',
+			stock: 20,
+			pictureUrl: 'public/images/furniture/desk/desk5.png',
 		},
 		{
 			id: 21,
@@ -190,7 +210,8 @@ class ItemService {
 			description: 'Living Room',
 			content: 'Designed with the highest standards in the market, with an elegant finish.',
 			price: 5000,
-			pictureUrl: 'assets/images/furniture/living_room/living_room1.png',
+			stock: 20,
+			pictureUrl: 'public/images/furniture/living_room/living_room1.png',
 		},
 		{
 			id: 22,
@@ -199,7 +220,8 @@ class ItemService {
 			description: 'Living Room',
 			content: 'Designed with the highest standards in the market, with an elegant finish.',
 			price: 6000,
-			pictureUrl: 'assets/images/furniture/living_room/living_room2.png',
+			stock: 20,
+			pictureUrl: 'public/images/furniture/living_room/living_room2.png',
 		},
 		{
 			id: 23,
@@ -208,7 +230,8 @@ class ItemService {
 			description: 'Living Room',
 			content: 'Designed with the highest standards in the market, with an elegant finish.',
 			price: 5000,
-			pictureUrl: 'assets/images/furniture/living_room/living_room3.png',
+			stock: 20,
+			pictureUrl: 'public/images/furniture/living_room/living_room3.png',
 		},
 		{
 			id: 24,
@@ -217,7 +240,8 @@ class ItemService {
 			description: 'Living Room',
 			content: 'Designed with the highest standards in the market, with an elegant finish.',
 			price: 7000,
-			pictureUrl: 'assets/images/furniture/living_room/living_room4.png',
+			stock: 20,
+			pictureUrl: 'public/images/furniture/living_room/living_room4.png',
 		},
 		{
 			id: 25,
@@ -226,7 +250,8 @@ class ItemService {
 			description: 'Living Room',
 			content: 'Designed with the highest standards in the market, with an elegant finish.',
 			price: 8000,
-			pictureUrl: 'assets/images/furniture/living_room/living_room5.png',
+			stock: 20,
+			pictureUrl: 'public/images/furniture/living_room/living_room5.png',
 		},
 		{
 			id: 26,
@@ -235,7 +260,8 @@ class ItemService {
 			description: 'Table & Chairs',
 			content: 'Designed with the highest standards in the market, with an elegant finish.',
 			price: 5000,
-			pictureUrl: 'assets/images/furniture/table_chair/table_chair1.png',
+			stock: 20,
+			pictureUrl: 'public/images/furniture/table_chair/table_chair1.png',
 		},
 		{
 			id: 27,
@@ -244,7 +270,8 @@ class ItemService {
 			description: 'Table & Chairs',
 			content: 'Designed with the highest standards in the market, with an elegant finish.',
 			price: 8000,
-			pictureUrl: 'assets/images/furniture/table_chair/table_chair2.png',
+			stock: 20,
+			pictureUrl: 'public/images/furniture/table_chair/table_chair2.png',
 		},
 		{
 			id: 28,
@@ -253,7 +280,8 @@ class ItemService {
 			description: 'Table & Chairs',
 			content: 'Designed with the highest standards in the market, with an elegant finish.',
 			price: 5000,
-			pictureUrl: 'assets/images/furniture/table_chair/table_chair3.png',
+			stock: 20,
+			pictureUrl: 'public/images/furniture/table_chair/table_chair3.png',
 		},
 		{
 			id: 29,
@@ -262,7 +290,8 @@ class ItemService {
 			description: 'Table & Chairs',
 			content: 'Designed with the highest standards in the market, with an elegant finish.',
 			price: 5000,
-			pictureUrl: 'assets/images/furniture/table_chair/table_chair4.png',
+			stock: 20,
+			pictureUrl: 'public/images/furniture/table_chair/table_chair4.png',
 		},
 		{
 			id: 30,
@@ -271,7 +300,8 @@ class ItemService {
 			description: 'Table & Chairs',
 			content: 'Designed with the highest standards in the market, with an elegant finish.',
 			price: 9000,
-			pictureUrl: 'assets/images/furniture/table_chair/table_chair5.png',
+			stock: 20,
+			pictureUrl: 'public/images/furniture/table_chair/table_chair5.png',
 		},
 		{
 			id: 31,
@@ -280,7 +310,8 @@ class ItemService {
 			description: 'Beds',
 			content: 'Designed with the highest standards in the market, with an elegant finish.',
 			price: 8000,
-			pictureUrl: 'assets/images/furniture/beds/beds1.png',
+			stock: 20,
+			pictureUrl: 'public/images/furniture/beds/beds1.png',
 		},
 		{
 			id: 32,
@@ -289,7 +320,8 @@ class ItemService {
 			description: 'Beds',
 			content: 'Designed with the highest standards in the market, with an elegant finish.',
 			price: 5000,
-			pictureUrl: 'assets/images/furniture/beds/beds2.png',
+			stock: 20,
+			pictureUrl: 'public/images/furniture/beds/beds2.png',
 		},
 		{
 			id: 33,
@@ -298,7 +330,8 @@ class ItemService {
 			description: 'Beds',
 			content: 'Designed with the highest standards in the market, with an elegant finish.',
 			price: 9000,
-			pictureUrl: 'assets/images/furniture/beds/beds3.png',
+			stock: 20,
+			pictureUrl: 'public/images/furniture/beds/beds3.png',
 		},
 		{
 			id: 34,
@@ -307,7 +340,8 @@ class ItemService {
 			description: 'Beds',
 			content: 'Designed with the highest standards in the market, with an elegant finish.',
 			price: 4000,
-			pictureUrl: 'assets/images/furniture/beds/beds4.png',
+			stock: 20,
+			pictureUrl: 'public/images/furniture/beds/beds4.png',
 		},
 		{
 			id: 35,
@@ -316,7 +350,8 @@ class ItemService {
 			description: 'Beds',
 			content: 'Designed with the highest standards in the market, with an elegant finish.',
 			price: 7000,
-			pictureUrl: 'assets/images/furniture/beds/beds5.png',
+			stock: 20,
+			pictureUrl: 'public/images/furniture/beds/beds5.png',
 		},
 		{
 			id: 36,
@@ -325,7 +360,8 @@ class ItemService {
 			description: 'Rugs',
 			content: 'Designed with the highest standards in the market, with an elegant finish.',
 			price: 7000,
-			pictureUrl: 'assets/images/furniture/rugs/rug1.png',
+			stock: 20,
+			pictureUrl: 'public/images/furniture/rugs/rug1.png',
 		},
 		{
 			id: 37,
@@ -334,7 +370,8 @@ class ItemService {
 			description: 'Rugs',
 			content: 'Designed with the highest standards in the market, with an elegant finish.',
 			price: 4000,
-			pictureUrl: 'assets/images/furniture/rugs/rug2.png',
+			stock: 20,
+			pictureUrl: 'public/images/furniture/rugs/rug2.png',
 		},
 		{
 			id: 38,
@@ -343,7 +380,8 @@ class ItemService {
 			description: 'Rugs',
 			content: 'Designed with the highest standards in the market, with an elegant finish.',
 			price: 8000,
-			pictureUrl: 'assets/images/furniture/rugs/rug3.png',
+			stock: 20,
+			pictureUrl: 'public/images/furniture/rugs/rug3.png',
 		},
 		{
 			id: 39,
@@ -352,7 +390,8 @@ class ItemService {
 			description: 'Dining Chairs',
 			content: 'Designed with the highest standards in the market, with an elegant finish.',
 			price: 10000,
-			pictureUrl: 'assets/images/furniture/dining_chairs/dining_chairs1.png',
+			stock: 20,
+			pictureUrl: 'public/images/furniture/dining_chairs/dining_chairs1.png',
 		},
 		{
 			id: 40,
@@ -361,7 +400,8 @@ class ItemService {
 			description: 'Dining Chairs',
 			content: 'Designed with the highest standards in the market, with an elegant finish.',
 			price: 15000,
-			pictureUrl: 'assets/images/furniture/dining_chairs/dining_chairs2.png',
+			stock: 20,
+			pictureUrl: 'public/images/furniture/dining_chairs/dining_chairs2.png',
 		},
 		{
 			id: 41,
@@ -370,7 +410,8 @@ class ItemService {
 			description: 'Dining Chairs',
 			content: 'Designed with the highest standards in the market, with an elegant finish.',
 			price: 11000,
-			pictureUrl: 'assets/images/furniture/dining_chairs/dining_chairs3.png',
+			stock: 20,
+			pictureUrl: 'public/images/furniture/dining_chairs/dining_chairs3.png',
 		},
 		{
 			id: 42,
@@ -379,7 +420,8 @@ class ItemService {
 			description: 'TV & Media',
 			content: 'Designed with the highest standards in the market, with an elegant finish.',
 			price: 11000,
-			pictureUrl: 'assets/images/furniture/tv_media/tv_media1.png',
+			stock: 20,
+			pictureUrl: 'public/images/furniture/tv_media/tv_media1.png',
 		},
 		{
 			id: 43,
@@ -388,7 +430,8 @@ class ItemService {
 			description: 'TV & Media',
 			content: 'Designed with the highest standards in the market, with an elegant finish.',
 			price: 16000,
-			pictureUrl: 'assets/images/furniture/tv_media/tv_media2.png',
+			stock: 20,
+			pictureUrl: 'public/images/furniture/tv_media/tv_media2.png',
 		},
 		{
 			id: 44,
@@ -397,12 +440,12 @@ class ItemService {
 			description: 'TV & Media',
 			content: 'Designed with the highest standards in the market, with an elegant finish.',
 			price: 18000,
-			pictureUrl: 'assets/images/furniture/tv_media/tv_media3.png',
+			stock: 20,
+			pictureUrl: 'public/images/furniture/tv_media/tv_media3.png',
 		},
 	];
 
 	constructor(setError: (value: string) => void) {
-		//this.path = `/'}`;
 		this.setError = setError;
 	}
 

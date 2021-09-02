@@ -1,9 +1,8 @@
 import { Layout, Menu, Typography } from 'antd';
 
-import { Link } from 'react-router-dom';
+import CartWidget from '../CartWidget/CartWidget';
 import Logo from '../../assets/images/logo.png';
 import React from 'react';
-import { ShoppingCartOutlined } from '@ant-design/icons';
 
 const Header = () => {
 	const { Header } = Layout;
@@ -17,9 +16,7 @@ const Header = () => {
 			</div> */}
 			<Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
 				<Menu.Item key="users">Users</Menu.Item>
-				<Menu.Item key="chart" icon={<ShoppingCartOutlined />}>
-					Cart
-				</Menu.Item>
+				<CartWidget />
 			</Menu>
 		</Header>
 	);

@@ -9,7 +9,6 @@ import {
 
 import CustomBreadcrum from '../Breadcum/CustomBreadcrum';
 import React from 'react';
-import Sofa from '../../assets/images/furniture/sofa_couches/sofa_couches1.png';
 import { useHistory } from 'react-router-dom';
 
 const Item = ({ furniture }) => {
@@ -24,7 +23,6 @@ const Item = ({ furniture }) => {
 
 	const onGoItemDetail = item => history.push(`./uid=${furniture.id}`);
 
-	console.log('url:', `'../../${furniture.pictureUrl}'`);
 	return (
 		<List.Item
 			key={furniture.id}
@@ -41,7 +39,7 @@ const Item = ({ furniture }) => {
 					onClick={onGoItemDetail}
 				/>,
 			]}
-			extra={<img width={272} alt="img" src={`'../../${furniture.pictureUrl}'`} />}
+			extra={<img width={272} alt="img" src={furniture.pictureUrl} />}
 		>
 			<List.Item.Meta
 				avatar={
