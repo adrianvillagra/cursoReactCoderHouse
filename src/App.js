@@ -18,6 +18,11 @@ function App() {
 							<ItemList />
 						</MainLayout>
 					</Route>
+					<Route exact path="/users">
+						<MainLayout>
+							<ItemList categoryId={1} />
+						</MainLayout>
+					</Route>
 					<Route exact path="/new-sale">
 						<MainLayout>
 							<ItemList />

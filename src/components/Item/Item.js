@@ -13,13 +13,13 @@ import { useHistory } from 'react-router-dom';
 
 const Item = ({ furniture }) => {
 	const history = useHistory();
-
 	const IconText = ({ icon, text }) => (
 		<Space>
 			{React.createElement(icon)}
 			{text}
 		</Space>
 	);
+	const urlHref = `/furniture/uid=${furniture.id}`;
 
 	const onGoItemDetail = item => history.push(`./uid=${furniture.id}`);
 
@@ -51,7 +51,7 @@ const Item = ({ furniture }) => {
 						S&C
 					</Avatar>
 				}
-				title={furniture.title}
+				title={<a href={urlHref}>{furniture.title}</a>}
 				description={furniture.description}
 			/>
 			{furniture.content}

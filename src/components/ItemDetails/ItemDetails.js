@@ -13,14 +13,10 @@ const ItemDetails = () => {
 	const [finishPurchaseVisible, setFinishPurchaseVisible] = useState(false);
 	const [loading, setLoading] = useState(false);
 	const [quantity, setQuantity] = useState(0);
-	const [showModal, setShowModal] = useState(false);
 	const { id, furnitureId } = useParams();
 	const history = useHistory();
 	const { Content } = Layout;
-	// const { addItem } = useContext(CartContext);
-	// const { getQuantityByItem } = useContext(CartContext);
-	// const { cart } = useContext(CartContext);
-	const { addItem, getQuantityByItem, cart } = useContext(CartContext);
+	const { addItem, getQuantityByItem } = useContext(CartContext);
 	const service = new ItemService();
 
 	const backToSofaAndCouches = () => history.replace(`/furniture/sofa-couches`);
@@ -43,7 +39,6 @@ const ItemDetails = () => {
 	};
 
 	const finishPurchase = () => {
-		console.log('cart:', cart);
 		history.push(`/cart`);
 	};
 
