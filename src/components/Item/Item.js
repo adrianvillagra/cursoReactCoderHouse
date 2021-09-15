@@ -29,8 +29,16 @@ const Item = ({ furniture }) => {
 			actions={[
 				<IconText icon={StarOutlined} text="156" key="list-vertical-star-o" />,
 				<IconText icon={LikeOutlined} text="156" key="list-vertical-like-o" />,
-				<IconText icon={MessageOutlined} text="2" key="list-vertical-message" />,
-				<IconText icon={DollarCircleOutlined} text={furniture.price} key="list-vertical-message" />,
+				<IconText
+					icon={MessageOutlined}
+					text="2"
+					key="list-vertical-message"
+				/>,
+				<IconText
+					icon={DollarCircleOutlined}
+					text={furniture.price}
+					key="list-vertical-message"
+				/>,
 				<Button
 					type="primary"
 					shape="circle"
@@ -42,15 +50,7 @@ const Item = ({ furniture }) => {
 			extra={<img width={272} alt="img" src={furniture.pictureUrl} />}
 		>
 			<List.Item.Meta
-				avatar={
-					<Avatar
-						style={{
-							backgroundColor: '#f56a00',
-						}}
-					>
-						S&C
-					</Avatar>
-				}
+				avatar={<Avatar src={furniture.pictureUrl} />}
 				title={<a href={urlHref}>{furniture.title}</a>}
 				description={furniture.description}
 			/>

@@ -15,7 +15,8 @@ const ItemCount = props => {
 		setItemCount(parseInt(itemCount) + 1);
 	};
 
-	const onDeductItem = () => setItemCount(itemCount - 1 >= 1 ? itemCount - 1 : 1);
+	const onDeductItem = () =>
+		setItemCount(itemCount - 1 >= 1 ? itemCount - 1 : 1);
 
 	const onClickOk = () => {
 		if (itemCount <= props.stock) {
@@ -55,7 +56,11 @@ const ItemCount = props => {
 				size={'small'}
 				onClick={onDeductItem}
 			/>
-			<Input defaultValue="1" style={{ width: '100px', marginInline: '30px' }} value={itemCount} />
+			<Input
+				defaultValue="1"
+				style={{ width: '100px', marginInline: '30px' }}
+				value={itemCount}
+			/>
 			<Button
 				type="primary"
 				shape="circle"

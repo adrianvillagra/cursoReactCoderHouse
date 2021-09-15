@@ -1,12 +1,11 @@
-import { Alert, Layout, Menu } from 'antd';
 import React, { useState } from 'react';
 
 import CustomBreadcrum from '../components/Breadcum/CustomBreadcrum';
-import { ErrorContext } from '../providers/ErrorProvider';
 import Header from '../components/Header/Header';
+import { Layout } from 'antd';
 import NavBar from '../components/NavBar/NavBar';
 
-const { Content, Sider, Footer } = Layout;
+const { Content, Footer } = Layout;
 
 const MainLayout = ({ children }) => {
 	const [error, setError] = useState('');
@@ -30,9 +29,15 @@ const MainLayout = ({ children }) => {
 			<Header />
 			<Layout>
 				<NavBar />
-				<Content className="site-layout" style={{ padding: '0 50px', marginTop: 70 }}>
+				<Content
+					className="site-layout"
+					style={{ padding: '0 50px', marginTop: 70 }}
+				>
 					<CustomBreadcrum style={{ margin: '16px 0' }} routes={routes} />
-					<div className="site-layout-background" style={{ padding: 24, minHeight: 380 }}>
+					<div
+						className="site-layout-background"
+						style={{ padding: 24, minHeight: 380 }}
+					>
 						{children}
 					</div>
 					<Footer style={{ textAlign: 'center' }}>AV Furniture ©2021</Footer>

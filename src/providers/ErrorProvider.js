@@ -6,6 +6,8 @@ export const ErrorProvider = props => {
 	const [error, setError] = useState('');
 
 	return (
-		<ErrorContext.Provider value={{ error, setError }}>{props.children}</ErrorContext.Provider>
+		<ErrorContext.Provider value={{ error, setError }}>
+			{props.children}
+		</ErrorContext.Provider>
 	);
 };

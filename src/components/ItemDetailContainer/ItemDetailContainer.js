@@ -54,7 +54,9 @@ const ItemDetailsContainer = () => {
 				renderItem={item => <ItemDetails furniture={item} />}
 			/>
 			<ItemCount onVisible={isVisible} stock="10" initial="1" />
-			{loading && <Spin style={{ display: 'flex', justifyContent: 'center' }} />}
+			{loading && (
+				<Spin style={{ display: 'flex', justifyContent: 'center' }} />
+			)}
 		</div>
 	);
 };

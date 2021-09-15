@@ -1,11 +1,13 @@
-import { Button, Col, Descriptions, Image, Layout, Row, Spin, Typography } from 'antd';
+import { Button, Col, Descriptions, Image, Layout, Row, Spin } from 'antd';
 import { CheckCircleTwoTone, PlusCircleOutlined } from '@ant-design/icons';
 import React, { useContext, useEffect, useState } from 'react';
+import { collection, getDocs, query, where } from 'firebase/firestore';
 import { useHistory, useParams } from 'react-router-dom';
 
 import { CartContext } from '../CartContext/CartContext';
 import ItemCount from '../ItemCount/ItemCount';
 import ItemService from '../../services/ItemService';
+import { db } from '../../data/Firebase';
 
 const ItemDetails = () => {
 	const [furniture, setFurniture] = useState([]);
@@ -27,15 +29,19 @@ const ItemDetails = () => {
 		setFinishPurchaseVisible(true);
 	};
 
-	const getFurniture = () => {
+	const getFurnitureDetail = async () => {
 		setLoading(true);
-		service
-			.get(id)
-			.then(data => {
-				setFurniture(data);
-			})
-			.catch(err => console.log(err))
-			.finally(() => setLoading(false));
+		const q = query(collection(db, 'furniture'));
+
+		const querySnapshot = await getDocs(q);
+		const data = [];
+		querySnapshot.forEach(doc => {
+			data.push({ ...doc.data(), id: doc.id });
+		});
+		if (typeof querySnapshot != 'undefined') {
+			setFurniture(...data.filter(item => item.id === id));
+		}
+		setLoading(false);
 	};
 
 	const finishPurchase = () => {
@@ -43,7 +49,7 @@ const ItemDetails = () => {
 	};
 
 	useEffect(() => {
-		getFurniture();
+		getFurnitureDetail();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
@@ -53,7 +59,11 @@ const ItemDetails = () => {
 				<Row gutter={10}>
 					<Col span={16}>
 						<Image.PreviewGroup>
-							<Image width={'60%'} style={{ align: 'center' }} src={furniture.pictureUrl} />
+							<Image
+								width={'60%'}
+								style={{ align: 'center' }}
+								src={furniture.pictureUrl}
+							/>
 						</Image.PreviewGroup>
 					</Col>
 					<Col span={8}>
@@ -101,12 +111,22 @@ const ItemDetails = () => {
 					</Col>
 				</Row>
 				<br />
-				{loading && <Spin style={{ display: 'flex', justifyContent: 'center' }} />}
+				{loading && (
+					<Spin style={{ display: 'flex', justifyContent: 'center' }} />
+				)}
 				<Descriptions title="Descriptions" bordered style={{ width: 'auto' }}>
-					<Descriptions.Item label="Product">{furniture.title}</Descriptions.Item>
-					<Descriptions.Item label="Content">{furniture.content}</Descriptions.Item>
-					<Descriptions.Item label="Description">{furniture.description}</Descriptions.Item>
-					<Descriptions.Item label="Amount">${furniture.price}</Descriptions.Item>
+					<Descriptions.Item label="Product">
+						{furniture.title}
+					</Descriptions.Item>
+					<Descriptions.Item label="Content">
+						{furniture.content}
+					</Descriptions.Item>
+					<Descriptions.Item label="Description">
+						{furniture.description}
+					</Descriptions.Item>
+					<Descriptions.Item label="Amount">
+						${furniture.price}
+					</Descriptions.Item>
 				</Descriptions>
 			</Content>
 			<ItemCount

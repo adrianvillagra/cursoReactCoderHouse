@@ -13,10 +13,6 @@ const { Sider } = Layout;
 const { SubMenu } = Menu;
 
 const NavBar = () => {
-	const handleClick = e => {
-		console.log('click ', e);
-	};
-
 	return (
 		<Sider width={200} className="site-layout" style={{ marginTop: 60 }}>
 			<Menu
@@ -48,7 +44,9 @@ const NavBar = () => {
 						<NavLink to="/furniture/living-room">Living Room</NavLink>
 					</Menu.Item>
 					<Menu.Item key="table-chair-sets">
-						<NavLink to="/furniture/table-chair-sets">Table & Chair Sets</NavLink>
+						<NavLink to="/furniture/table-chair-sets">
+							Table & Chair Sets
+						</NavLink>
 					</Menu.Item>
 					<Menu.Item key="beds">
 						<NavLink to="/furniture/beds">Beds</NavLink>
