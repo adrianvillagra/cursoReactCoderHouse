@@ -36,7 +36,9 @@ const Item = ({ furniture }) => {
 				/>,
 				<IconText
 					icon={DollarCircleOutlined}
-					text={furniture.price}
+					text={furniture.price.toLocaleString('en-US', {
+						minimumFractionDigits: 2,
+					})}
 					key="list-vertical-message"
 				/>,
 				<Button

@@ -26,10 +26,14 @@ const Cart = () => {
 		history.push(`/furniture/sofa-couches`);
 	};
 
+	const onGoFinishPurchase = () => {
+		history.push(`/finish-purchase`);
+	};
+
 	return (
-		<div className="demo-infinite-container">
+		<div className="infinite-container">
 			{cart.length > 0 ? (
-				<div>
+				<div style={{ minHeight: '600px' }}>
 					<List
 						dataSource={cart}
 						renderItem={item => (
@@ -71,8 +75,11 @@ const Cart = () => {
 
 								<div>
 									<span style={{ paddingLeft: '30px', fontSize: 'larger' }}>
-										{'$'}
-										{item.price * item.quantity}{' '}
+										{(item.price * item.quantity).toLocaleString('en-US', {
+											style: 'currency',
+											currency: 'USD',
+											minimumFractionDigits: 2,
+										})}
 									</span>
 								</div>
 							</List.Item>
@@ -83,12 +90,16 @@ const Cart = () => {
 						<br />
 						<br />
 						<href style={{ paddingRight: '10px', fontSize: 'larger' }}>
-							{'TOTAL $'}
-							{getAmountCart()}{' '}
+							{'TOTAL '}
+							{getAmountCart().toLocaleString('en-US', {
+								style: 'currency',
+								currency: 'USD',
+								minimumFractionDigits: 2,
+							})}{' '}
 						</href>
 						<br />
 						<br />
-						<Button type="primary" size="default">
+						<Button type="primary" size="default" onClick={onGoFinishPurchase}>
 							Finish Purchase
 						</Button>
 					</div>
@@ -101,7 +112,9 @@ const Cart = () => {
 					</Button>
 				</div>
 			)}
-			{loading && <Spin style={{ display: 'flex', justifyContent: 'center' }} />}
+			{loading && (
+				<Spin style={{ display: 'flex', justifyContent: 'center' }} />
+			)}
 		</div>
 	);
 };

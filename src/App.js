@@ -4,9 +4,11 @@ import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 
 import Cart from './components/Cart/Cart';
 import { CartProvider } from './components/CartContext/CartContext';
+import FinishPurchase from './components/FinshPurchase/FinishPurchase';
 import ItemDetails from './components/ItemDetails/ItemDetails';
 import ItemList from './components/ItemList/ItemList';
 import MainLayout from './layout/MainLayout';
+import NewUser from './components/NewUser/NewUser';
 
 function App() {
 	return (
@@ -18,9 +20,19 @@ function App() {
 							<ItemList />
 						</MainLayout>
 					</Route>
-					<Route exact path="/users">
+					<Route exact path="/user">
 						<MainLayout>
 							<ItemList categoryId={1} />
+						</MainLayout>
+					</Route>
+					<Route exact path="/new-user">
+						<MainLayout>
+							<NewUser />
+						</MainLayout>
+					</Route>
+					<Route exact path="/finish-purchase">
+						<MainLayout>
+							<FinishPurchase />
 						</MainLayout>
 					</Route>
 					<Route exact path="/new-sale">

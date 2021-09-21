@@ -7,9 +7,6 @@ import React from 'react';
 
 const Header = () => {
 	const { Header } = Layout;
-	const { Sider } = Layout;
-	const { SubMenu } = Menu;
-	const { Text } = Typography;
 
 	return (
 		<Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
@@ -19,7 +16,7 @@ const Header = () => {
 
 			<Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
 				<Menu.Item key="users">
-					<NavLink to="/users">Users</NavLink>
+					<NavLink to="/users">User</NavLink>
 				</Menu.Item>
 				<CartWidget />
 			</Menu>

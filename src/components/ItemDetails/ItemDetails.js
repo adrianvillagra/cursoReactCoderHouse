@@ -48,6 +48,11 @@ const ItemDetails = () => {
 		history.push(`/cart`);
 	};
 
+	const getPriceWithStyle = price => {
+		console.log('price:', price);
+		return price;
+	};
+
 	useEffect(() => {
 		getFurnitureDetail();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
@@ -125,7 +130,11 @@ const ItemDetails = () => {
 						{furniture.description}
 					</Descriptions.Item>
 					<Descriptions.Item label="Amount">
-						${furniture.price}
+						{Number(furniture.price).toLocaleString('en-US', {
+							style: 'currency',
+							currency: 'USD',
+							minimumFractionDigits: 2,
+						})}
 					</Descriptions.Item>
 				</Descriptions>
 			</Content>

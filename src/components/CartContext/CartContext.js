@@ -9,12 +9,15 @@ export const CartProvider = ({ children }) => {
 		if (isInCart(item.id)) {
 			const newCart = cart.map(cartElement => {
 				if (cartElement.id === item.id) {
-					return { ...cartElement, quantity: cartElement.quantity + quantity };
+					return {
+						...cartElement,
+						quantity: parseInt(cartElement.quantity) + parseInt(quantity),
+					};
 				} else return cartElement;
 			});
 			setCart(newCart);
 		} else {
-			setCart(prev => [...prev, { ...item, quantity }]);
+			setCart(prev => [...prev, { ...item, quantity: parseInt(quantity) }]);
 		}
 	};
 
@@ -22,7 +25,10 @@ export const CartProvider = ({ children }) => {
 		if (isInCart(item.id)) {
 			const newCart = cart.map(cartElement => {
 				if (cartElement.id === item.id) {
-					return { ...cartElement, quantity: cartElement.quantity - quantity };
+					return {
+						...cartElement,
+						quantity: parseInt(cartElement.quantity - quantity),
+					};
 				} else return cartElement;
 			});
 			setCart(newCart);
