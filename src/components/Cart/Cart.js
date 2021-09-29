@@ -1,5 +1,9 @@
-import { Avatar, Button, Input, List, Spin } from 'antd';
-import { DownOutlined, UpOutlined } from '@ant-design/icons';
+import { Avatar, Button, Input, List, Popconfirm, Spin } from 'antd';
+import {
+	DownOutlined,
+	QuestionCircleOutlined,
+	UpOutlined,
+} from '@ant-design/icons';
 import React, { useContext, useState } from 'react';
 
 import { CartContext } from '../CartContext/CartContext';
@@ -7,7 +11,8 @@ import { useHistory } from 'react-router-dom';
 
 const Cart = () => {
 	const [loading, setLoading] = useState(false);
-	const { cart, reduceItem, addItem, getAmountCart } = useContext(CartContext);
+	const { cart, reduceItem, addItem, getAmountCart, removeItem } =
+		useContext(CartContext);
 	const history = useHistory();
 
 	const onAddItem = item => {
@@ -30,6 +35,12 @@ const Cart = () => {
 		history.push(`/finish-purchase`);
 	};
 
+	const onDeleteItem = item => {
+		setLoading(true);
+		removeItem(item.id);
+		setLoading(false);
+	};
+
 	return (
 		<div className="infinite-container">
 			{cart.length > 0 ? (
@@ -43,6 +54,16 @@ const Cart = () => {
 									title={<a href="./cart">{item.title}</a>}
 									description={item.description}
 								/>
+								<span>
+									<Popconfirm
+										title="Are you sure？"
+										onConfirm={() => onDeleteItem(item)}
+										placement="bottom"
+										icon={<QuestionCircleOutlined style={{ color: 'red' }} />}
+									>
+										<a href="#">Delete</a>
+									</Popconfirm>
+								</span>
 								<div style={{ paddingLeft: '20px', paddingRight: '20px' }}>
 									<Button
 										type="primary"

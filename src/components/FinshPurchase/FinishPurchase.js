@@ -194,7 +194,7 @@ const FinishPurchase = () => {
 						label="User phone"
 						rules={[{ required: true }, { min: 2 }, { max: 50 }]}
 					>
-						<Input type="number" />
+						<Input />
 					</Form.Item>
 					<Form.Item
 						className="user-email"

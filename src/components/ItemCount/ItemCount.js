@@ -1,4 +1,4 @@
-import { Button, Input, Modal } from 'antd';
+import { Button, Input, Modal, message } from 'antd';
 import { DownOutlined, UpOutlined } from '@ant-design/icons';
 import React, { useEffect, useState } from 'react';
 
@@ -27,14 +27,14 @@ const ItemCount = props => {
 	};
 
 	const errorMessage = () => {
-		Modal.error({
+		message.error({
 			title: 'Error',
 			content: 'Quantity is greater than stock.',
 		});
 	};
 
 	const successMessage = () => {
-		Modal.success({
+		message.success({
 			title: 'Success',
 			content: 'Items included correctly.',
 		});

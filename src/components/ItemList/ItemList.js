@@ -68,7 +68,7 @@ const ItemList = categoryId => {
 
 	return (
 		<div>
-			<CustomBreadcrum routes={routes} key={Math.random()} />
+			<CustomBreadcrum routes={routes} />
 			<List
 				itemLayout="vertical"
 				size="large"
