@@ -21,7 +21,7 @@ const Item = ({ furniture }) => {
 	);
 	const urlHref = `/furniture/uid=${furniture.id}`;
 
-	const onGoItemDetail = item => history.push(`./uid=${furniture.id}`);
+	const onGoItemDetail = item => history.push(`../uid=${furniture.id}`);
 
 	return (
 		<List.Item

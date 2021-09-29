@@ -144,7 +144,11 @@ const FinishPurchase = () => {
 	};
 
 	const onGoToMainPage = () => {
-		history.push(`/furniture/sofa-couches`);
+		history.push(`/`);
+	};
+
+	const onGoToCart = () => {
+		history.push(`./cart`);
 	};
 
 	const successMessage = purchaseId => {
@@ -176,7 +180,7 @@ const FinishPurchase = () => {
 					title="Finish purchase"
 					primaryButton="Finish"
 					onSubmit={onAddPurchase}
-					onCancel={onGoToMainPage}
+					onCancel={onGoToCart}
 					onSubmitFailed={onSubmitFailed}
 					autoComplete="off"
 				>

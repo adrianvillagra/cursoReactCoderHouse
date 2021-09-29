@@ -1,7 +1,16 @@
-import { Button, Col, Descriptions, Image, Layout, Row, Spin } from 'antd';
-import { CheckCircleTwoTone, PlusCircleOutlined } from '@ant-design/icons';
+import {
+	Button,
+	Col,
+	Descriptions,
+	Image,
+	Input,
+	Layout,
+	Row,
+	Spin,
+	message,
+} from 'antd';
 import React, { useContext, useEffect, useState } from 'react';
-import { collection, getDocs, query, where } from 'firebase/firestore';
+import { collection, getDocs, query } from 'firebase/firestore';
 import { useHistory, useParams } from 'react-router-dom';
 
 import { CartContext } from '../CartContext/CartContext';
@@ -21,7 +30,7 @@ const ItemDetails = () => {
 	const { id, furnitureId } = useParams();
 	const history = useHistory();
 	const { Content } = Layout;
-	const { addItem, getQuantityByItem } = useContext(CartContext);
+	const { addItem, getQuantityByItem, reduceItem } = useContext(CartContext);
 	const service = new ItemService();
 
 	const routes = [
@@ -43,12 +52,6 @@ const ItemDetails = () => {
 		{ id: 10, path: './tv-media/' },
 	];
 
-	const addToCart = () => {
-		addItem(furniture, quantity);
-		setQuantity(0);
-		setFinishPurchaseVisible(true);
-	};
-
 	const backToSofaAndCouches = () => history.replace(`/furniture/sofa-couches`);
 
 	const getFurnitureDetail = async () => {
@@ -68,10 +71,6 @@ const ItemDetails = () => {
 		}
 		setLoading(false);
 		return categoryId;
-	};
-
-	const finishPurchase = () => {
-		history.push(`/cart`);
 	};
 
 	const getCategoryName = async categoryId => {
@@ -125,46 +124,10 @@ const ItemDetails = () => {
 					</Col>
 					<Col span={8}>
 						<br />
-						Quantity{' '}
+						Quantity:{' '}
 						<span>
-							<Button
-								type="primary"
-								shape="circle"
-								icon={<PlusCircleOutlined />}
-								size={'small'}
-								onClick={value => setIsVisible(value)}
-							/>{' '}
+							<ItemCount furniture={furniture} />
 						</span>
-						<br />
-						<br />
-						{quantity !== 0 ? (
-							<div>
-								<Button
-									type="primary"
-									shape="round"
-									icon={<CheckCircleTwoTone />}
-									size="medium"
-									onClick={addToCart}
-								>
-									Add to cart
-								</Button>
-								<br />
-								<br />
-							</div>
-						) : (
-							''
-						)}
-						{finishPurchaseVisible && (
-							<Button
-								type="primary"
-								shape="round"
-								icon={<CheckCircleTwoTone />}
-								size="medium"
-								onClick={finishPurchase}
-							>
-								Finish the purchase
-							</Button>
-						)}
 					</Col>
 				</Row>
 				<br />
@@ -190,12 +153,6 @@ const ItemDetails = () => {
 					</Descriptions.Item>
 				</Descriptions>
 			</Content>
-			<ItemCount
-				onVisible={isVisible}
-				stock={furniture.stock - getQuantityByItem(furniture.id)}
-				initial="1"
-				quantitySelected={value => setQuantity(value)}
-			/>
 		</Layout>
 	);
 };
