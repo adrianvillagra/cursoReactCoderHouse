@@ -5,9 +5,11 @@ import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import Cart from './components/Cart/Cart';
 import { CartProvider } from './components/CartContext/CartContext';
 import FinishPurchase from './components/FinshPurchase/FinishPurchase';
+import Home from './components/Home/Home';
 import ItemDetails from './components/ItemDetails/ItemDetails';
 import ItemList from './components/ItemList/ItemList';
 import MainLayout from './layout/MainLayout';
+import NewSale from './components/NewSale/NewSale';
 import NewUser from './components/NewUser/NewUser';
 
 function App() {
@@ -17,7 +19,7 @@ function App() {
 				<Switch>
 					<Route exact path="/">
 						<MainLayout>
-							<ItemList />
+							<Home />
 						</MainLayout>
 					</Route>
 					<Route exact path="/user">
@@ -37,7 +39,7 @@ function App() {
 					</Route>
 					<Route exact path="/new-sale">
 						<MainLayout>
-							<ItemList />
+							<NewSale />
 						</MainLayout>
 					</Route>
 					<Route exact path="/cart">

@@ -14,7 +14,9 @@ const CustomBreadcrum = ({ routes }) => {
 		);
 	};
 
-	return <Breadcrumb className="breadcrum" itemRender={itemRender} routes={routes} />;
+	return (
+		<Breadcrumb className="breadcrum" itemRender={itemRender} routes={routes} />
+	);
 };
 
 export default CustomBreadcrum;
