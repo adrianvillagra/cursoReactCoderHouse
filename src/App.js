@@ -4,6 +4,7 @@ import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 
 import Cart from './components/Cart/Cart';
 import { CartProvider } from './components/CartContext/CartContext';
+import Error from './components/Error/Error';
 import FinishPurchase from './components/FinshPurchase/FinishPurchase';
 import Home from './components/Home/Home';
 import ItemDetails from './components/ItemDetails/ItemDetails';
@@ -11,6 +12,7 @@ import ItemList from './components/ItemList/ItemList';
 import MainLayout from './layout/MainLayout';
 import NewSale from './components/NewSale/NewSale';
 import NewUser from './components/NewUser/NewUser';
+import SuccessfullyPurchased from './components/SuccessfullyPurchased/SuccessfullyPurchased';
 
 function App() {
 	return (
@@ -106,6 +108,14 @@ function App() {
 						<MainLayout>
 							<ItemList />
 						</MainLayout>
+					</Route>
+					<Route exact path="/successfully/purchaseId=:id">
+						<MainLayout>
+							<SuccessfullyPurchased />
+						</MainLayout>
+					</Route>
+					<Route path="*">
+						<Error />
 					</Route>
 				</Switch>
 			</Router>

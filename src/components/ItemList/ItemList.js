@@ -84,9 +84,7 @@ const ItemList = categoryId => {
 						<b>AV - Furniture</b> New Collection
 					</div>
 				}
-				renderItem={item => (
-					<Item furniture={item} needFurnitureInPath={false} />
-				)}
+				renderItem={item => <Item furniture={item} />}
 			/>
 			{loading && (
 				<Spin style={{ display: 'flex', justifyContent: 'center' }} />

@@ -1,4 +1,4 @@
-import { Form, Input, Layout, Modal, Spin } from 'antd';
+import { Button, Form, Input, Layout, Modal, Result, Spin } from 'antd';
 import React, { useContext, useState } from 'react';
 import {
 	Timestamp,
@@ -12,6 +12,7 @@ import {
 
 import { CartContext } from '../CartContext/CartContext';
 import CommonForm from '../CommonForm/CommonForm';
+import SuccessfullyPurchased from '../SuccessfullyPurchased/SuccessfullyPurchased';
 import { db } from '../../data/Firebase';
 import { useHistory } from 'react-router-dom';
 
@@ -22,10 +23,6 @@ const FinishPurchase = () => {
 		useContext(CartContext);
 	const history = useHistory();
 	const { Content } = Layout;
-	const routes = [
-		{ path: '/', breadcrumbName: 'Main' },
-		{ path: '/finish-purchase', breadcrumbName: 'Finish purchase' },
-	];
 	const onAddPurchase = async values => {
 		setLoading(true);
 		try {
@@ -33,14 +30,17 @@ const FinishPurchase = () => {
 			const purchaseId = await addPurchase(userId);
 			await addPurchaseDetail(purchaseId);
 			await updateStock(purchaseId);
-			successMessage(purchaseId);
+			goToSuccessfullyPurchased(purchaseId);
 			clear();
 		} catch (err) {
 			errorMessage(err.toString());
 		} finally {
 			setLoading(false);
-			onGoToMainPage();
 		}
+	};
+
+	const goToSuccessfullyPurchased = purchaseId => {
+		history.push(`../successfully/purchaseId=${purchaseId})`);
 	};
 
 	const addUser = async user => {
@@ -175,7 +175,6 @@ const FinishPurchase = () => {
 	return (
 		<Layout style={{ height: '100vh' }}>
 			<Content style={{ width: '100%' }}>
-				{/* <CustomBreadcrum routes={routes} /> */}
 				<CommonForm
 					title="Finish purchase"
 					primaryButton="Finish"
@@ -213,7 +212,6 @@ const FinishPurchase = () => {
 					>
 						<Input />
 					</Form.Item>
-					{/* <NewUser isAdded={value => setDisableFinishPurchase(value)} /> */}
 				</CommonForm>
 				{loading && (
 					<Spin style={{ display: 'flex', justifyContent: 'center' }} />

@@ -21,7 +21,14 @@ const Item = ({ furniture }) => {
 	);
 	const urlHref = `/furniture/uid=${furniture.id}`;
 
-	const onGoItemDetail = item => history.push(`../uid=${furniture.id}`);
+	const onGoItemDetail = needFurnitureInPath => {
+		console.log('needFurnitureInPath:', needFurnitureInPath);
+		history.push(
+			needFurnitureInPath
+				? `../../furniture/uid=${furniture.id}`
+				: `../uid=${furniture.id})`
+		);
+	};
 
 	return (
 		<List.Item
@@ -46,7 +53,7 @@ const Item = ({ furniture }) => {
 					shape="circle"
 					icon={<ShopOutlined />}
 					size={'small'}
-					onClick={onGoItemDetail}
+					onClick={value => onGoItemDetail(true)}
 				/>,
 			]}
 			extra={<img width={272} alt="img" src={furniture.pictureUrl} />}
