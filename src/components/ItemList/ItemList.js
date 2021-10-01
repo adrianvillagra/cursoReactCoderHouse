@@ -1,15 +1,17 @@
-import { List, Spin } from 'antd';
+import { Col, Input, List, Row, Spin } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 
 import CustomBreadcrum from '../Breadcum/CustomBreadcrum';
 import FurnitureService from '../../services/ItemService';
 import Item from '../Item/Item';
+import { SearchOutlined } from '@ant-design/icons';
 import { db } from '../../data/Firebase';
 
 const ItemList = categoryId => {
 	const [categoryName, setCategoryName] = useState('');
 	const [furniture, setFurniture] = useState([]);
+	const [furnitureFiltered, setFurnitureFiltered] = useState([]);
 	const [loading, setLoading] = useState(false);
 	const service = new FurnitureService();
 	const routes = [
@@ -31,6 +33,7 @@ const ItemList = categoryId => {
 		});
 		if (typeof querySnapshot != 'undefined') {
 			setFurniture(data);
+			setFurnitureFiltered(data);
 		}
 		setLoading(false);
 	};
@@ -48,6 +51,30 @@ const ItemList = categoryId => {
 			setCategoryName(categoryData[0].name);
 		}
 		setLoading(false);
+	};
+
+	const filterByName = event => {
+		if (event.keyCode === 13) {
+			const valueToSearch = event.target.value;
+			console.log(event.target.value);
+			setFurnitureFiltered({ ...furnitureFiltered, name: event.target.value });
+			if (event.target.value) {
+				const results = [];
+				console.log('furniture:', furniture);
+				const elements = furniture.filter(item => {
+					console.log('item:', item);
+					return item.title
+						.toLowerCase()
+						.startsWith(valueToSearch.toLowerCase());
+				});
+				if (elements.length !== 0) {
+					results.push(...elements);
+				}
+				setFurnitureFiltered(results);
+			} else {
+				setFurnitureFiltered(furniture);
+			}
+		}
 	};
 
 	useEffect(() => {
@@ -68,7 +95,21 @@ const ItemList = categoryId => {
 
 	return (
 		<div>
-			<CustomBreadcrum routes={routes} />
+			<Col>
+				<Row>
+					<CustomBreadcrum routes={routes} />
+				</Row>
+				<Row gutter={22} style={{ marginTop: '20px', marginBlockEnd: '20px' }}>
+					<Col style={{ width: '600px' }}>
+						<Input
+							width="600"
+							placeholder="filter by name"
+							onKeyDown={filterByName}
+							suffix={<SearchOutlined />}
+						/>
+					</Col>
+				</Row>
+			</Col>
 			<List
 				itemLayout="vertical"
 				size="large"
@@ -78,7 +119,7 @@ const ItemList = categoryId => {
 					},
 					pageSize: 5,
 				}}
-				dataSource={furniture}
+				dataSource={furnitureFiltered}
 				footer={
 					<div>
 						<b>AV - Furniture</b> New Collection

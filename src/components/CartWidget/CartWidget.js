@@ -1,7 +1,7 @@
+import { Badge, Menu } from 'antd';
 import React, { useContext, useEffect, useState } from 'react';
 
 import { CartContext } from '../CartContext/CartContext';
-import { Menu } from 'antd';
 import { NavLink } from 'react-router-dom';
 import { ShoppingCartOutlined } from '@ant-design/icons';
 
@@ -19,7 +19,7 @@ const CartWidget = () => {
 	return (
 		<Menu.Item key="chart" icon={<ShoppingCartOutlined />}>
 			<NavLink to="/cart">
-				{totalItems > 0 ? `Cart(${totalItems})` : 'Cart'}
+				<Badge count={totalItems > 0 ? totalItems : ''}></Badge>
 			</NavLink>
 		</Menu.Item>
 	);

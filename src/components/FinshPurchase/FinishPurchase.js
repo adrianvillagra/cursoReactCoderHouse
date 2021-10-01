@@ -1,5 +1,5 @@
-import { Button, Form, Input, Layout, Modal, Result, Spin } from 'antd';
-import React, { useContext, useState } from 'react';
+import { Form, Input, Layout, Modal, Spin } from 'antd';
+import React, { useContext, useEffect, useState } from 'react';
 import {
 	Timestamp,
 	addDoc,
@@ -12,7 +12,6 @@ import {
 
 import { CartContext } from '../CartContext/CartContext';
 import CommonForm from '../CommonForm/CommonForm';
-import SuccessfullyPurchased from '../SuccessfullyPurchased/SuccessfullyPurchased';
 import { db } from '../../data/Firebase';
 import { useHistory } from 'react-router-dom';
 
@@ -23,6 +22,7 @@ const FinishPurchase = () => {
 		useContext(CartContext);
 	const history = useHistory();
 	const { Content } = Layout;
+
 	const onAddPurchase = async values => {
 		setLoading(true);
 		try {
@@ -143,19 +143,8 @@ const FinishPurchase = () => {
 		};
 	};
 
-	const onGoToMainPage = () => {
-		history.push(`/`);
-	};
-
 	const onGoToCart = () => {
 		history.push(`./cart`);
-	};
-
-	const successMessage = purchaseId => {
-		Modal.success({
-			title: 'Success',
-			content: 'Purchase added correctly. Your purchase id is ' + purchaseId,
-		});
 	};
 
 	const errorMessage = err => {
@@ -168,9 +157,13 @@ const FinishPurchase = () => {
 	const onSubmitFailed = () => {
 		Modal.error({
 			title: 'Error',
-			content: 'Purchase can' + "'" + 't added correctly.',
+			content: 'Purchase can' + "'" + 't added correctly. Complete all fields.',
 		});
 	};
+
+	useEffect(() => {
+		localStorage.setItem('cart', JSON.stringify(cart));
+	}, [cart]);
 
 	return (
 		<Layout style={{ height: '100vh' }}>

@@ -1,9 +1,13 @@
 import './App.css';
 
+import {
+	CartContext,
+	CartProvider,
+} from './components/CartContext/CartContext';
+import React, { useContext, useEffect, useState } from 'react';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 
 import Cart from './components/Cart/Cart';
-import { CartProvider } from './components/CartContext/CartContext';
 import Error from './components/Error/Error';
 import FinishPurchase from './components/FinshPurchase/FinishPurchase';
 import Home from './components/Home/Home';
@@ -15,6 +19,21 @@ import NewUser from './components/NewUser/NewUser';
 import SuccessfullyPurchased from './components/SuccessfullyPurchased/SuccessfullyPurchased';
 
 function App() {
+	//const { updateCart } = useContext(CartContext);
+	//const [value, setValue] = useState(sessionStorage.getItem('value'));
+
+	useEffect(() => {
+		let data = sessionStorage.getItem('cart');
+		data = JSON.parse(data);
+		console.log('data1:', data);
+		if (data !== null) {
+			sessionStorage.setItem('cart', JSON.stringify(data));
+			console.log('data2:', data);
+			//updateCart(...data);
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
+
 	return (
 		<CartProvider>
 			<Router>

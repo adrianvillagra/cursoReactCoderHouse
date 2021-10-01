@@ -1,36 +1,21 @@
-import {
-	Button,
-	Col,
-	Descriptions,
-	Image,
-	Input,
-	Layout,
-	Row,
-	Spin,
-	message,
-} from 'antd';
-import React, { useContext, useEffect, useState } from 'react';
+import { Col, Descriptions, Image, Layout, Row, Spin } from 'antd';
+import React, { useEffect, useState } from 'react';
 import { collection, getDocs, query } from 'firebase/firestore';
-import { useHistory, useParams } from 'react-router-dom';
 
-import { CartContext } from '../CartContext/CartContext';
 import CustomBreadcrum from '../Breadcum/CustomBreadcrum';
 import ItemCount from '../ItemCount/ItemCount';
 import ItemService from '../../services/ItemService';
 import { db } from '../../data/Firebase';
+import { useParams } from 'react-router-dom';
 
 const ItemDetails = () => {
 	const [categoryName, setCategoryName] = useState('');
+	const [filters, setFilters] = useState({ name: '' });
 	const [path, setPath] = useState('');
 	const [furniture, setFurniture] = useState([]);
-	const [isVisible, setIsVisible] = useState(false);
-	const [finishPurchaseVisible, setFinishPurchaseVisible] = useState(false);
 	const [loading, setLoading] = useState(false);
-	const [quantity, setQuantity] = useState(0);
 	const { id, furnitureId } = useParams();
-	const history = useHistory();
 	const { Content } = Layout;
-	const { addItem, getQuantityByItem, reduceItem } = useContext(CartContext);
 	const service = new ItemService();
 
 	const routes = [
@@ -51,8 +36,6 @@ const ItemDetails = () => {
 		{ id: 9, path: './dining/' },
 		{ id: 10, path: './tv-media/' },
 	];
-
-	const backToSofaAndCouches = () => history.replace(`/furniture/sofa-couches`);
 
 	const getFurnitureDetail = async () => {
 		setLoading(true);
@@ -97,6 +80,12 @@ const ItemDetails = () => {
 		setLoading(false);
 	};
 
+	const filterByName = event => {
+		if (event.keyCode === 13) {
+			setFilters({ ...filters, name: event.target.value });
+		}
+	};
+
 	const getData = async () => {
 		const categoryId = await getFurnitureDetail();
 		await getCategoryName(categoryId);
@@ -111,7 +100,9 @@ const ItemDetails = () => {
 	return (
 		<Layout style={{ height: 'auto' }}>
 			<Content style={{ width: '100%' }}>
-				<CustomBreadcrum routes={routes} />
+				<Col>
+					<CustomBreadcrum routes={routes} />
+				</Col>
 				<Row gutter={10}>
 					<Col span={16}>
 						<Image.PreviewGroup>
