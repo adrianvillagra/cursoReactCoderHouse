@@ -22,7 +22,6 @@ const Item = ({ furniture }) => {
 	const urlHref = `/furniture/uid=${furniture.id}`;
 
 	const onGoItemDetail = needFurnitureInPath => {
-		console.log('needFurnitureInPath:', needFurnitureInPath);
 		history.push(
 			needFurnitureInPath
 				? `../../furniture/uid=${furniture.id}`

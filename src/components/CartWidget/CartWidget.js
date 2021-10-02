@@ -10,10 +10,12 @@ const CartWidget = () => {
 	const [totalItems, setTotalItems] = useState(0);
 
 	useEffect(() => {
-		const ttlItems = cart.reduce((acc, item) => {
-			return parseInt(acc + item.quantity);
-		}, 0);
-		setTotalItems(ttlItems);
+		if (cart) {
+			const ttlItems = cart.reduce((acc, item) => {
+				return parseInt(acc + item.quantity);
+			}, 0);
+			setTotalItems(ttlItems);
+		}
 	}, [cart]);
 
 	return (

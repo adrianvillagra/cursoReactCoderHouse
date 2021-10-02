@@ -56,13 +56,10 @@ const ItemList = categoryId => {
 	const filterByName = event => {
 		if (event.keyCode === 13) {
 			const valueToSearch = event.target.value;
-			console.log(event.target.value);
 			setFurnitureFiltered({ ...furnitureFiltered, name: event.target.value });
 			if (event.target.value) {
 				const results = [];
-				console.log('furniture:', furniture);
 				const elements = furniture.filter(item => {
-					console.log('item:', item);
 					return item.title
 						.toLowerCase()
 						.startsWith(valueToSearch.toLowerCase());
@@ -114,11 +111,13 @@ const ItemList = categoryId => {
 				itemLayout="vertical"
 				size="large"
 				pagination={{
-					onChange: page => {
-						console.log(page);
-					},
-					pageSize: 5,
+					total: furniture.length,
+					showQuickJumper: true,
+					showSizeChanger: true,
 				}}
+				onChange={pagination =>
+					getFurniture(pagination.pageSize, pagination.current)
+				}
 				dataSource={furnitureFiltered}
 				footer={
 					<div>

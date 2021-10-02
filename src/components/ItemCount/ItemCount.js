@@ -28,7 +28,7 @@ const ItemCount = props => {
 		setLoading(false);
 	};
 
-	const onAddToCart = () => {
+	const onAddToCart = async () => {
 		const qtyInCart = getQuantityByItem(props.furniture.id);
 		if (qtyInCart + quantity <= props.furniture.stock) {
 			successMessage();
@@ -55,12 +55,6 @@ const ItemCount = props => {
 	const goToFinishPurchase = () => {
 		history.push(`/cart`);
 	};
-
-	useEffect(() => {
-		if (window.localStorage) {
-			localStorage.setItem('cart', JSON.stringify(cart));
-		}
-	}, [cart]);
 
 	return (
 		<div className="container-item-count">
