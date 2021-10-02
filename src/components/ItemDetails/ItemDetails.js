@@ -10,7 +10,6 @@ import { useParams } from 'react-router-dom';
 
 const ItemDetails = () => {
 	const [categoryName, setCategoryName] = useState('');
-	const [filters, setFilters] = useState({ name: '' });
 	const [path, setPath] = useState('');
 	const [furniture, setFurniture] = useState([]);
 	const [loading, setLoading] = useState(false);
@@ -78,12 +77,6 @@ const ItemDetails = () => {
 		const temp = pathCategory.filter(item => item.id === categoryId);
 		setPath(temp[0].path);
 		setLoading(false);
-	};
-
-	const filterByName = event => {
-		if (event.keyCode === 13) {
-			setFilters({ ...filters, name: event.target.value });
-		}
 	};
 
 	const getData = async () => {
