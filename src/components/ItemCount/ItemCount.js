@@ -57,7 +57,9 @@ const ItemCount = props => {
 	};
 
 	useEffect(() => {
-		sessionStorage.setItem('cart', JSON.stringify(cart));
+		if (window.localStorage) {
+			localStorage.setItem('cart', JSON.stringify(cart));
+		}
 	}, [cart]);
 
 	return (

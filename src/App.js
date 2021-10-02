@@ -22,17 +22,23 @@ function App() {
 	//const { updateCart } = useContext(CartContext);
 	//const [value, setValue] = useState(sessionStorage.getItem('value'));
 
-	useEffect(() => {
-		let data = sessionStorage.getItem('cart');
-		data = JSON.parse(data);
-		console.log('data1:', data);
-		if (data !== null) {
-			sessionStorage.setItem('cart', JSON.stringify(data));
-			console.log('data2:', data);
-			//updateCart(...data);
-		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
+	// useEffect(() => {
+	// 	for (let i = 0; i < localStorage.length; i++) {
+	// 		let key = localStorage.key(i);
+	// 		let value = localStorage.getItem(key);
+	// 		console.log(key, value);
+	// 	}
+	// 	let data = JSON.parse(
+	// 		sessionStorage.getItem(localStorage.getItem('token'))
+	// 	);
+	// 	console.log('data1:', data);
+	// 	if (data !== null) {
+	// 		sessionStorage.setItem('cart', JSON.stringify(data));
+	// 		console.log('data2:', data);
+	// 		//updateCart(...data);
+	// 	}
+	// 	// eslint-disable-next-line react-hooks/exhaustive-deps
+	// }, []);
 
 	return (
 		<CartProvider>
