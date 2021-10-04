@@ -1,21 +1,13 @@
-import {
-	DocumentSnapshot,
-	collection,
-	getDocs,
-	query,
-	where,
-} from 'firebase/firestore';
 import { List, Spin } from 'antd';
 import React, { useEffect, useState } from 'react';
+import { collection, getDocs, query } from 'firebase/firestore';
 
-import FurnitureService from '../../services/ItemService';
 import Item from '../Item/Item';
 import { db } from '../../data/Firebase';
 
 const NewSale = () => {
 	const [furniture, setFurniture] = useState([]);
 	const [loading, setLoading] = useState(false);
-	const service = new FurnitureService();
 
 	const getFurnitureSale = async () => {
 		setLoading(true);

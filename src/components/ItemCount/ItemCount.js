@@ -4,7 +4,7 @@ import {
 	DownOutlined,
 	UpOutlined,
 } from '@ant-design/icons';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 
 import { CartContext } from '../CartContext/CartContext';
 import { useHistory } from 'react-router-dom';
@@ -14,7 +14,7 @@ const ItemCount = props => {
 	const [quantity, setQuantity] = useState(1);
 	const [loading, setLoading] = useState(false);
 	const history = useHistory();
-	const { cart, addItem, getQuantityByItem } = useContext(CartContext);
+	const { addItem, getQuantityByItem } = useContext(CartContext);
 
 	const onAddQuantity = () => {
 		setLoading(true);

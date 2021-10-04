@@ -4,7 +4,6 @@ import { collection, getDocs, query } from 'firebase/firestore';
 
 import CustomBreadcrum from '../Breadcum/CustomBreadcrum';
 import ItemCount from '../ItemCount/ItemCount';
-import ItemService from '../../services/ItemService';
 import { db } from '../../data/Firebase';
 import { useParams } from 'react-router-dom';
 
@@ -13,9 +12,8 @@ const ItemDetails = () => {
 	const [path, setPath] = useState('');
 	const [furniture, setFurniture] = useState([]);
 	const [loading, setLoading] = useState(false);
-	const { id, furnitureId } = useParams();
+	const { id } = useParams();
 	const { Content } = Layout;
-	const service = new ItemService();
 
 	const routes = [
 		{ path: '/', breadcrumbName: 'Home' },

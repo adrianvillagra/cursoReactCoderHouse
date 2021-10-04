@@ -1,18 +1,11 @@
-import React, { useState } from 'react';
-
 import Header from '../components/Header/Header';
 import { Layout } from 'antd';
 import NavBar from '../components/NavBar/NavBar';
+import React from 'react';
 
 const { Content, Footer } = Layout;
 
 const MainLayout = ({ children }) => {
-	const [error, setError] = useState('');
-
-	const onErrorClose = () => {
-		setError('');
-	};
-
 	return (
 		<Layout>
 			<Header />

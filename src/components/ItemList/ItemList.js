@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 
 import CustomBreadcrum from '../Breadcum/CustomBreadcrum';
-import FurnitureService from '../../services/ItemService';
 import Item from '../Item/Item';
 import { SearchOutlined } from '@ant-design/icons';
 import { db } from '../../data/Firebase';
@@ -13,7 +12,6 @@ const ItemList = categoryId => {
 	const [furniture, setFurniture] = useState([]);
 	const [furnitureFiltered, setFurnitureFiltered] = useState([]);
 	const [loading, setLoading] = useState(false);
-	const service = new FurnitureService();
 	const routes = [
 		{ path: '../', breadcrumbName: 'Home' },
 		{ path: '/', breadcrumbName: categoryName },

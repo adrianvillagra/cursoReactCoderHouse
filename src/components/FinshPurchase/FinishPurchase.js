@@ -17,7 +17,6 @@ import { useHistory } from 'react-router-dom';
 
 const FinishPurchase = () => {
 	const [loading, setLoading] = useState(false);
-	const [userId, setUserId] = useState(0);
 	const { cart, getQuantityByItem, clear, getAmountCart } =
 		useContext(CartContext);
 	const history = useHistory();
@@ -48,7 +47,6 @@ const FinishPurchase = () => {
 		let docRef = '';
 		try {
 			docRef = await addDoc(collection(db, 'user'), user);
-			setUserId(docRef.id);
 			return docRef.id;
 		} catch (err) {
 			errorMessage(err.toString());
@@ -157,6 +155,7 @@ const FinishPurchase = () => {
 	const onSubmitFailed = () => {
 		Modal.error({
 			title: 'Error',
+			// eslint-disable-next-line no-useless-concat
 			content: 'Purchase can' + "'" + 't added correctly. Complete all fields.',
 		});
 	};
