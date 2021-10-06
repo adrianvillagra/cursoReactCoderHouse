@@ -1,20 +1,8 @@
-import {
-	Alert,
-	Button,
-	Col,
-	Form,
-	Input,
-	Layout,
-	Row,
-	Space,
-	Typography,
-} from 'antd';
-import { LockOutlined, UserOutlined } from '@ant-design/icons';
+import { Alert, Button, Col, Form, Layout, Row, Space, Typography } from 'antd';
 import React, { useState } from 'react';
 
 import { Fade } from 'react-reveal';
 import Header from '../../components/Header/Header';
-import { Link } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
 
 const Login = () => {

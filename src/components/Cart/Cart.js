@@ -61,7 +61,7 @@ const Cart = () => {
 										placement="bottom"
 										icon={<QuestionCircleOutlined style={{ color: 'red' }} />}
 									>
-										<a href="#">Delete</a>
+										<a href="/#">Delete</a>
 									</Popconfirm>
 								</span>
 								<div style={{ paddingLeft: '20px', paddingRight: '20px' }}>

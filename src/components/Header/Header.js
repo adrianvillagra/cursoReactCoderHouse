@@ -1,9 +1,8 @@
-import { Avatar, Layout, Menu, Typography } from 'antd';
+import { Avatar, Layout, Menu } from 'antd';
 import React, { Fragment } from 'react';
 
 import { CaretDownOutlined } from '@ant-design/icons';
 import CartWidget from '../CartWidget/CartWidget';
-import { NavLink } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
 
 const Header = () => {
