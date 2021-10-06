@@ -13,25 +13,19 @@ yarn install
 ```
 
 ## Usage
-Login
+##Login
 <img src="src/assets/images/readme_img/first_img.png" width="500">
-##
-Auth0
+##Auth0
 <img src="src/assets/images/readme_img/login.png" width="500">
-##
-List of furniture
+##List of furniture
 <img src="src/assets/images/readme_img/list_furniture.png" width="500">
-##
-Detail
+##Detail
 <img src="src/assets/images/readme_img/detail_furniture.png" width="500">
-##
-Cart
+##Cart
 <img src="src/assets/images/readme_img/cart.png" width="500">
-##
-Finish purchase
+##Finish purchase
 <img src="src/assets/images/readme_img/finish_purchase.png" width="500">
-##
-Succesfully purchased
+##Succesfully purchased
 <img src="src/assets/images/readme_img/succesfully.png" width="300">
 
 
