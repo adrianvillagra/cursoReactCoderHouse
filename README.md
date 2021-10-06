@@ -13,7 +13,6 @@ yarn install
 ```
 
 ## Usage
-#
 Login
 #
 <img src="src/assets/images/readme_img/first_img.png" width="500">
