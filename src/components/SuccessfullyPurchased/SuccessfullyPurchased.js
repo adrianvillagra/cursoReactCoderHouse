@@ -10,7 +10,9 @@ const SuccessfullyPurchased = () => {
 	const onGoToMainPage = () => {
 		history.push(`/`);
 	};
+
 	const messageSuccessfully = 'Order number: ' + id;
+
 	return (
 		<div>
 			<Result
