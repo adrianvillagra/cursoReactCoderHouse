@@ -1,3 +1,5 @@
+<img src="src/assets/images/logo.png" width="100">
+
 # AV-Furniture
 
 AV-Furniture is a web application, based on an eCommerce for the sale of furniture.
