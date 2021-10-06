@@ -1,5 +1,5 @@
-import { Form, Input, Layout, Modal, Spin } from 'antd';
-import React, { useContext, useEffect, useState } from 'react';
+import { Form, Input, InputNumber, Layout, Modal, Spin } from 'antd';
+import React, { useContext, useState } from 'react';
 import {
 	Timestamp,
 	addDoc,
@@ -13,6 +13,7 @@ import {
 import { CartContext } from '../CartContext/CartContext';
 import CommonForm from '../CommonForm/CommonForm';
 import { db } from '../../data/Firebase';
+import { useAuth0 } from '@auth0/auth0-react';
 import { useHistory } from 'react-router-dom';
 
 const FinishPurchase = () => {
@@ -20,17 +21,22 @@ const FinishPurchase = () => {
 	const { cart, getQuantityByItem, clear, getAmountCart } =
 		useContext(CartContext);
 	const history = useHistory();
+	const { user } = useAuth0();
 	const { Content } = Layout;
 
 	const onAddPurchase = async values => {
 		setLoading(true);
 		try {
-			const userId = await addUser(values);
-			const purchaseId = await addPurchase(userId);
-			await addPurchaseDetail(purchaseId);
-			await updateStock(purchaseId);
-			goToSuccessfullyPurchased(purchaseId);
-			clear();
+			if (cart.length === 0) {
+				onGoToCart();
+			} else {
+				const userId = await addUser(values);
+				const purchaseId = await addPurchase(userId);
+				await addPurchaseDetail(purchaseId);
+				await updateStock(purchaseId);
+				goToSuccessfullyPurchased(purchaseId);
+				clear();
+			}
 		} catch (err) {
 			errorMessage(err.toString());
 		} finally {
@@ -160,10 +166,6 @@ const FinishPurchase = () => {
 		});
 	};
 
-	useEffect(() => {
-		localStorage.setItem('cart', JSON.stringify(cart));
-	}, [cart]);
-
 	return (
 		<Layout style={{ height: '100vh' }}>
 			<Content style={{ width: '100%' }}>
@@ -179,30 +181,32 @@ const FinishPurchase = () => {
 						className="user-name"
 						name="name"
 						label="User name"
-						rules={[{ required: true }, { min: 2 }, { max: 50 }]}
+						rules={[{ required: true, min: 2, max: 50 }]}
 					>
-						<Input />
+						<Input defaultValue={user.name} />
 					</Form.Item>
 					<Form.Item
 						className="user-phone"
 						name="phone"
 						label="User phone"
-						rules={[{ required: true }, { min: 2 }, { max: 50 }]}
+						rules={[
+							{
+								required: true,
+								min: 2,
+								type: 'number',
+								max: 999999999999999999,
+							},
+						]}
 					>
-						<Input />
+						<InputNumber min={1} style={{ width: '100%' }} />
 					</Form.Item>
 					<Form.Item
 						className="user-email"
 						name="email"
 						label="User email"
-						rules={[
-							{ required: true },
-							{ min: 6 },
-							{ max: 50 },
-							{ type: 'email' },
-						]}
+						rules={[{ required: true, min: 6, max: 50, type: 'email' }]}
 					>
-						<Input />
+						<Input defaultValue={user.email} />
 					</Form.Item>
 				</CommonForm>
 				{loading && (

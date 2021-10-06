@@ -8,6 +8,7 @@ const SuccessfullyPurchased = () => {
 	const { id } = useParams();
 
 	const onGoToMainPage = () => {
+		localStorage.removeItem('cart');
 		history.push(`/`);
 	};
 
