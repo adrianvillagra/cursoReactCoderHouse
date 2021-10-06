@@ -1,26 +1,50 @@
-import { Layout, Menu, Typography } from 'antd';
+import { Avatar, Layout, Menu, Typography } from 'antd';
+import React, { Fragment } from 'react';
 
-import { Link } from 'react-router-dom';
-import Logo from '../../assets/images/logo.png';
-import React from 'react';
-import { ShoppingCartOutlined } from '@ant-design/icons';
+import { CaretDownOutlined } from '@ant-design/icons';
+import CartWidget from '../CartWidget/CartWidget';
+import { NavLink } from 'react-router-dom';
+import { useAuth0 } from '@auth0/auth0-react';
 
 const Header = () => {
 	const { Header } = Layout;
 	const { SubMenu } = Menu;
-	const { Text } = Typography;
+	const { user, isAuthenticated, logout } = useAuth0();
 
+	const logOut = () => {
+		localStorage.clear();
+		logout({ returnTo: window.location.origin });
+	};
+
+	const userName = () => {
+		return (
+			<div>
+				{isAuthenticated && (
+					<Fragment>
+						<Avatar size="small" src={user.picture} /> {user.name}{' '}
+						<CaretDownOutlined />
+					</Fragment>
+				)}
+			</div>
+		);
+	};
 	return (
 		<Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
-			{/* <div className="logo">
-				<img className="eCommerceLogo" style={{ width: '150px' }} srcSet={Logo} alt="Logo"></img>
-			</div> */}
-			<Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
-				<Menu.Item key="users">Users</Menu.Item>
-				<Menu.Item key="chart" icon={<ShoppingCartOutlined />}>
-					Chart
-				</Menu.Item>
-			</Menu>
+			{isAuthenticated && (
+				<Menu
+					theme="dark"
+					mode="horizontal"
+					defaultSelectedKeys={['2']}
+					style={{ float: 'right' }}
+				>
+					<CartWidget />
+					<SubMenu title={userName()} key={userName()}>
+						<Menu.Item onClick={logOut} key="logout">
+							Logout
+						</Menu.Item>
+					</SubMenu>
+				</Menu>
+			)}
 		</Header>
 	);
 };

@@ -3,49 +3,63 @@ import {
 	DollarCircleOutlined,
 	LikeOutlined,
 	MessageOutlined,
-	PlusCircleOutlined,
+	ShopOutlined,
 	StarOutlined,
 } from '@ant-design/icons';
 
+import CustomBreadcrum from '../Breadcum/CustomBreadcrum';
 import React from 'react';
-import Sofa from '../../assets/images/sofa.png';
+import { useHistory } from 'react-router-dom';
 
-const Item = ({ furniture, onClickAddItem }) => {
+const Item = ({ furniture }) => {
+	const history = useHistory();
 	const IconText = ({ icon, text }) => (
 		<Space>
 			{React.createElement(icon)}
 			{text}
 		</Space>
 	);
+	const urlHref = `/furniture/uid=${furniture.id}`;
+
+	const onGoItemDetail = needFurnitureInPath => {
+		history.push(
+			needFurnitureInPath
+				? `../../furniture/uid=${furniture.id}`
+				: `../uid=${furniture.id})`
+		);
+	};
+
 	return (
 		<List.Item
 			key={furniture.id}
 			actions={[
 				<IconText icon={StarOutlined} text="156" key="list-vertical-star-o" />,
 				<IconText icon={LikeOutlined} text="156" key="list-vertical-like-o" />,
-				<IconText icon={MessageOutlined} text="2" key="list-vertical-message" />,
-				<IconText icon={DollarCircleOutlined} text={furniture.price} key="list-vertical-message" />,
+				<IconText
+					icon={MessageOutlined}
+					text="2"
+					key="list-vertical-message"
+				/>,
+				<IconText
+					icon={DollarCircleOutlined}
+					text={furniture.price.toLocaleString('en-US', {
+						minimumFractionDigits: 2,
+					})}
+					key="list-vertical-message"
+				/>,
 				<Button
 					type="primary"
 					shape="circle"
-					icon={<PlusCircleOutlined />}
+					icon={<ShopOutlined />}
 					size={'small'}
-					onClick={onClickAddItem}
+					onClick={value => onGoItemDetail(true)}
 				/>,
 			]}
-			extra={<img width={272} alt="logo" src={Sofa} />}
+			extra={<img width={272} alt="img" src={furniture.pictureUrl} />}
 		>
 			<List.Item.Meta
-				avatar={
-					<Avatar
-						style={{
-							backgroundColor: '#f56a00',
-						}}
-					>
-						S&C
-					</Avatar>
-				}
-				title={furniture.title}
+				avatar={<Avatar src={furniture.pictureUrl} />}
+				title={<a href={urlHref}>{furniture.title}</a>}
 				description={furniture.description}
 			/>
 			{furniture.content}
