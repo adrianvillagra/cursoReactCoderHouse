@@ -6,10 +6,10 @@ AV-Furniture is a web application, based on an eCommerce for the sale of furnitu
 
 ## Installation
 
-Use the package manager [yarn](https://yarnpkg.com/getting-started/install) to install AV-Furniture.
+Use the package manager [npm](hhttps://www.npmjs.com) to install AV-Furniture.
 
 ```bash
-yarn install
+npm install
 ```
 
 ## Usage
